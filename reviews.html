@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Reviews | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .logo img {
+            height: 50px;
+        }
+
+        .reviews-hero {
+            background: var(--primary);
+            color: white;
+            padding: 8rem 2rem 6rem;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .reviews-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars-display {
+            font-size: 4rem;
+            margin: 2rem 0;
+        }
+
+        .review-count {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-rating {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .reviews-content {
+            padding: 4rem 2rem;
+        }
+
+        .review-platforms-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .review-platforms-section h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .review-platforms-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .review-platform-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .review-platform-btn.facebook {
+            background: #1877f2;
+        }
+
+        .review-platform-btn.google {
+            background: #4285f4;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .review-card .stars {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-card .text {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .review-card .author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .review-card .type {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* OwnerRez widget styling — matches review-card appearance
+           and constrains height: at least 100px and at most the viewport width */
+        .ownerrez-widget {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            min-height: 800px;
+            max-height: 200vw;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        .ownerrez-widget-iframe {
+            min-height: 800px;
+            max-height: 200vw;
+            overflow:scroll
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Mountain View Mansion">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="reviews-hero">
+        <h1>Guest Reviews</h1>
+        <div class="stars-display">★★★★★</div>
+        <p class="review-count">400+ Five-Star Reviews</p>
+        <p class="review-rating">Rated Utah's #1 Vacation Rental</p>
+    </section>
+
+    <div class="container reviews-content">
+        
+        <div class="review-platforms-section">
+            <h2>Read Our Reviews On</h2>
+            <div class="review-platforms-buttons">
+
+                <a href="https://www.google.com/travel/search?q=mountain%20view%20mansion&g2lb=4965990&ts=CAAaACoCCgA&qs=MihDaG9JMVBmaC1OYUk3YnFQQVJvTkwyY3ZNVEZxTUROak1uaDZOeEFC&ap=ugEHcmV2aWV3cw" target="_blank" class="review-platform-btn google">
+                    Google Reviews
+                </a>
+            </div>
+        </div>
+        <!-- Reviews Web2 -->
+        <!-- OwnerRez Reviews widget for Mountain View Mansion -->
+        <div class="ownerrez-widget" data-propertyId="33967ccf73584514a79179f842220c9d" data-widget-type="Reviews Web2 - Reviews" data-widgetId="41a9c10d7cb64ad69d376923095ae64d"></div>
+        <div class="reviews-grid">
+            
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="text">
+                    "We had a family reunion of 27 people, ages 2½ to 77. Place was perfect, pool was a great hit, plenty of cooking room, great beds. Lisa and Adam were fantastic, always there to help or answer questions. We would come again."
+                </p>
+                <p class="author">— Linda B.</p>
+                <p class="type">Family Reunion</p>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="text">
+                    "This location had EVERYTHING you could possibly want and exceptional Mountain views! We had an absolute blast making lifelong memories on this trip. Thank you Adam and Lisa!"
+                </p>
+                <p class="author">— Paul</p>
+                <p class="type">Father & Sons Trip</p>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="text">
+                    "Amazing one-of-a-kind house-Mansion. We couldn't have picked a better location for our family reunion. So much room...so many amenities you won't find anywhere else. The owners were very responsive. This is the ideal spot."
+                </p>
+                <p class="author">— Robert B.</p>
+                <p class="type">Family Reunion</p>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="text">
+                    "The amenities were fantastic, and the location was perfect for exploring the surrounding area. The kids loved the pool, house and grounds, and had a blast playing and exploring. Thank you for making our vacation memorable."
+                </p>
+                <p class="author">— Mark</p>
+                <p class="type">Family Vacation</p>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="text">
+                    "This was a fun place to stay with plenty of space. Activities inside and out for all ages. We were there in March so the pool and gym were an enjoyment for the winter blues. I can't wait to go back again."
+                </p>
+                <p class="author">— Pam O.</p>
+                <p class="type">Group Getaway</p>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="text">
+                    "Adam and Lisa are truly amazing hosts, they are responsive and super helpful! We stayed here with a group of all ages and stages and every one of them truly enjoyed this gem of a property. We can't wait to return!"
+                </p>
+                <p class="author">— David W.</p>
+                <p class="type">Multi-Family Trip</p>
+            </div>
+
+        </div>
+
+        <div class="reviews-cta-section">
+            <h2>Ready to Create Your Own Memories?</h2>
+            <p>
+                Join hundreds of satisfied guests who've made lasting memories at Mountain View Mansion
+            </p>
+            <a href="booking.html" class="cta-button">Book Your Stay</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://app.ownerrez.com/widget.js"></script>
+</body>
+</html>

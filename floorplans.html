@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floor Plans | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://uc.orez.io/i/6f9e1fdad18047788a4a4c792f5d0dec-Medium') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .floorplans-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        .intro-text h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .intro-text p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .level-section {
+            margin-bottom: 5rem;
+        }
+        
+        .level-header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+        }
+        
+        .level-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .level-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .floorplan-display {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .floorplan-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .floorplan-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .floorplan-image img {
+            width: 100%;
+            display: block;
+        }
+        
+        .level-details h4 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .features-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            color: var(--dark);
+        }
+        
+        .features-list li:before {
+            content: "→ ";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 10px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .parking-section {
+            background: var(--light);
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            margin-top: 4rem;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+        }
+
+        .download-text {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        .parking-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .parking-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .parking-image {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .parking-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .parking-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .parking-info h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .parking-info ul {
+            list-style: none;
+        }
+
+        .parking-info li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+        }
+
+        .parking-info li:before {
+            content: "→ ";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .download-cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 15px;
+        }
+
+        .download-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .download-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .download-cta .download-btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .floorplan-display {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Mountain View Mansion">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div>
+            <h1>Floor Plans</h1>
+            <p>Navigate our 20,000 sq ft estate across 5 levels</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <div class="floorplans-container">
+        <div class="intro-text">
+            <h2>Five Levels of Luxury</h2>
+            <p>
+                Mountain View Mansion spans five distinct levels, each thoughtfully designed to maximize space, comfort, and functionality. From the pool house to the loft, every level offers unique amenities and stunning views. Explore our detailed floor plans below to plan your perfect stay.
+            </p>
+        </div>
+
+        <!-- Pool House Level -->
+        <div class="level-section">
+            <div class="level-header">
+                <h3>Pool House Level</h3>
+                <p>Underground Paradise</p>
+            </div>
+            <div class="level-content">
+                <div class="floorplan-display">
+                    <div class="floorplan-image">
+                        <img src="https://uc.orez.io/i/b0cf02f54a6044bd853eb8be2d2c239d-Large" alt="Pool House Floor Plan">
+                    </div>
+                    <div class="level-details">
+                        <h4>Features & Amenities</h4>
+                        <ul class="features-list">
+                            <li>Indoor heated pool with slide and diving board</li>
+                            <li>Large spa/jacuzzi with jets</li>
+                            <li>Full kitchen with appliances</li>
+                            <li>Dining area with fireplace</li>
+                            <li>Men's changing room with shower</li>
+                            <li>Women's changing room with shower</li>
+                            <li>Sauna accommodating 15 people</li>
+                            <li>Floor-to-ceiling glass walls</li>
+                            <li>Direct access to outdoor grounds</li>
+                        </ul>
+                        <div class="download-section">
+                            <p class="download-text">Download high-resolution floor plan</p>
+                            <a href="#" class="download-btn">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lower Level -->
+        <div class="level-section">
+            <div class="level-header">
+                <h3>Lower Level (1st Floor)</h3>
+                <p>Recreation & Bedrooms</p>
+            </div>
+            <div class="level-content">
+                <div class="floorplan-display">
+                    <div class="floorplan-image">
+                        <img src="https://uc.orez.io/i/52c205affae84c12af5da01b3e0f2a27-Large" alt="Lower Level Floor Plan">
+                    </div>
+                    <div class="level-details">
+                        <h4>Features & Amenities</h4>
+                        <ul class="features-list">
+                            <li>Great Room with theater and billiards</li>
+                            <li>Retractable projection screen</li>
+                            <li>Indoor sport court (basketball/volleyball)</li>
+                            <li>Full commercial kitchen with dining</li>
+                            <li>Soda fountain refreshment stand</li>
+                            <li>King Room (sleeps 4)</li>
+                            <li>Queen Room (sleeps 7)</li>
+                            <li>Bunk House 1 & 2 (sleeps 9 total)</li>
+                            <li>Jack & Jill bathrooms</li>
+                            <li>Laundry room</li>
+                            <li>Lower deck access with fire pit</li>
+                        </ul>
+                        <div class="download-section">
+                            <p class="download-text">Download high-resolution floor plan</p>
+                            <a href="#" class="download-btn">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="level-column">
+                    <div class="level-card">
+                        <h4>Lower Level 2</h4>
+                        <p>Exercise room with equipment, storage areas, utility spaces</p>
+                        <ul>
+                            <li>Cardio and weight equipment</li>
+                            <li>Mirror walls and wooden flooring</li>
+                            <li>Media storage</li>
+                            <li>Mechanical room</li>
+                        </ul>
+                        <div class="download-section">
+                            <p class="download-text">Download high-resolution floor plan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Level -->
+        <div class="level-section">
+            <div class="level-header">
+                <h3>Main Level (2nd Floor)</h3>
+                <p>Primary Living & Entertaining</p>
+            </div>
+            <div class="level-content">
+                <div class="floorplan-display">
+                    <div class="floorplan-image">
+                        <img src="https://uc.orez.io/i/4740c411175446879a38a52b02b5cbf4-Large" alt="Main Level Floor Plan">
+                    </div>
+                    <div class="level-details">
+                        <h4>Features & Amenities</h4>
+                        <ul class="features-list">
+                            <li>Grand entry with spiral staircase</li>
+                            <li>Formal living room with baby grand piano</li>
+                            <li>Great room with 3-story vaulted ceilings</li>
+                            <li>Main gourmet kitchen with island seating</li>
+                            <li>Formal dining room (seats 14+)</li>
+                            <li>Breakfast nook with mountain views</li>
+                            <li>Mt. Timpanogos Master Suite (accessible)</li>
+                            <li>Bridal Veil Falls Room</li>
+                            <li>Main floor deck with multiple levels</li>
+                            <li>Laundry room with 2 washers/dryers</li>
+                            <li>Half bathrooms</li>
+                            <li>Elevator access</li>
+                        </ul>
+                        <div class="download-section">
+                            <p class="download-text">Download high-resolution floor plan</p>
+                            <a href="#" class="download-btn">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upper Level -->
+        <div class="level-section">
+            <div class="level-header">
+                <h3>Upper Level (3rd Floor)</h3>
+                <p>Bedroom Suites & Commons</p>
+            </div>
+            <div class="level-content">
+                <div class="floorplan-display">
+                    <div class="floorplan-image">
+                        <img src="https://uc.orez.io/i/801117f4c9fb4e8c91502ec74ee1763b-Large" alt="Upper Level Floor Plan">
+                    </div>
+                    <div class="level-details">
+                        <h4>Features & Amenities</h4>
+                        <ul class="features-list">
+                            <li>Paris Master Suite with private deck</li>
+                            <li>Blue Sky Suite with master bath</li>
+                            <li>Wild Horse Suite (themed)</li>
+                            <li>Bryce Canyon Suite (sleeps 9)</li>
+                            <li>Coral Pink Sands Suite</li>
+                            <li>Upper commons area with desks</li>
+                            <li>Multiple ensuite bathrooms</li>
+                            <li>Walk-in closets throughout</li>
+                            <li>Laundry room</li>
+                            <li>Hallway bathrooms</li>
+                            <li>Overlook to great room below</li>
+                        </ul>
+                        <div class="download-section">
+                            <p class="download-text">Download high-resolution floor plan</p>
+                            <a href="#" class="download-btn">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loft Level -->
+        <div class="level-section">
+            <div class="level-header">
+                <h3>Loft Level (4th Floor)</h3>
+                <p>Top Floor Retreat</p>
+            </div>
+            <div class="level-content">
+                <div class="floorplan-display">
+                    <div class="floorplan-image">
+                        <img src="https://uc.orez.io/i/ba6b3cd9dd48481bb577029d027549bb-Large" alt="Loft Level">
+                    </div>
+                    <div class="level-details">
+                        <h4>Features & Amenities</h4>
+                        <ul class="features-list">
+                            <li>Open loft space with detailed murals</li>
+                            <li>Three couches (2 convert to sofa beds)</li>
+                            <li>Overlook to great room three stories below</li>
+                            <li>Additional sleeping for 4</li>
+                            <li>Perfect for kids' hangout space</li>
+                            <li>Spectacular ceiling details</li>
+                            <li>Natural light from below</li>
+                        </ul>
+                        <div class="download-section">
+                            <p class="download-text">Download high-resolution floor plan</p>
+                            <a href="#" class="download-btn">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parking Map -->
+        <div class="parking-section">
+            <h3 class="cta-heading">Parking Map</h3>
+            <div class="parking-wrapper">
+                <div class="parking-image">
+                    <img src="https://uc.orez.io/i/4b48f363ebbd4960b8f6e9ce6588a59c-Large" alt="Parking Map">
+                </div>
+                <div class="parking-info">
+                    <h4>Parking Information</h4>
+                    <ul class="features-list">
+                        <li>Three-car garage for guests</li>
+                        <li>Parking for 10-13 additional vehicles</li>
+                        <li>Two automatic gated entries (north and south)</li>
+                        <li>Day guests can use roundabout via south gate (Palisades)</li>
+                        <li>Accessible parking near elevator entrance</li>
+                        <li>Well-lit parking areas for evening arrivals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download All -->
+        <div class="download-cta">
+            <h3>Download Complete Floor Plan Package</h3>
+            <p>
+                Get all floor plans and parking map in one convenient PDF
+            </p>
+            <a href="https://mvmansion.com/wp-content/uploads/2025/02/Mountain-View-Mansion-Floor-Plan-and-Parking-Map.pdf" target="_blank" rel="noopener" class="download-btn">
+                Download Full Package (PDF)
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

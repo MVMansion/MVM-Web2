@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Reunions | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .logo img {
+            height: 50px;
+        }
+
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://uc.orez.io/i/97cf95ad95cb41cf984a810bb8f92e07-Large') center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .reunions-container {
+            padding: 6rem 2rem;
+        }
+
+        .intro-section {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 5rem;
+        }
+
+        .intro-section h2 {
+            color: var(--primary);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-section p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .feature-card .emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+        }
+
+        .activities-section {
+            background: var(--light);
+            padding: 5rem 3rem;
+            border-radius: 20px;
+            margin-bottom: 5rem;
+        }
+
+        .activities-section h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .generations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .generation-column h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .generation-column ul {
+            list-style: none;
+            line-height: 2;
+            color: var(--gray);
+        }
+
+        .everyone-together {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+        }
+
+        .everyone-together h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .activity-item p:first-child {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .activity-item p:last-child {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .acres-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .acres-section img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .acres-content h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .acres-content p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .acres-content ul {
+            list-style: none;
+            color: var(--gray);
+            line-height: 2;
+        }
+
+        .stories-section {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        .stories-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stories-section > p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .story-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .story-card .stars {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .story-card p:first-of-type {
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .story-card p:last-child {
+            font-weight: 600;
+        }
+
+        .stories-link {
+            display: inline-block;
+            margin-top: 2rem;
+            background: white;
+            color: var(--primary);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .planning-section {
+            background: white;
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 5rem;
+        }
+
+        .planning-section h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .planning-section > p {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .tip-card {
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 10px;
+        }
+
+        .tip-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .tip-card p {
+            color: var(--gray);
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 20px;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .cta-button.primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Mountain View Mansion">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div>
+            <h1>Family Reunions</h1>
+            <p>Create Lifelong Memories Together</p>
+            <a href="booking.html" class="cta-button">Check Availability</a>
+        </div>
+    </section>
+
+    <div class="container reunions-container">
+        <div class="intro-section">
+            <h2>The Perfect Reunion Destination</h2>
+            <p>
+                Mountain View Mansion is Utah's premier family reunion venue, offering 20,000 square feet of space where your entire family can stay, play, and create cherished memories together. With accommodations for up to 50 guests and activities for all ages, everyone stays under one roof.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="emoji">👨‍👩‍👧‍👦</div>
+                <h3>Sleeps 50</h3>
+                <p>11 bedroom suites mean everyone stays together - no splitting up between hotels or separate rentals.</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">🏊</div>
+                <h3>Endless Activities</h3>
+                <p>Indoor pool, sport courts, playground, theater, and 1.7 acres of outdoor fun for all ages.</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">🍽️</div>
+                <h3>Cook Together</h3>
+                <p>Three commercial kitchens and multiple dining areas for family meals, or arrange professional catering.</p>
+            </div>
+        </div>
+
+        <div class="activities-section">
+            <h2>Activities for Every Generation</h2>
+            
+            <div class="generations-grid">
+                <div class="generation-column">
+                    <h3>👶 Kids & Teens</h3>
+                    <ul>
+                        <li>✓ Indoor heated pool with slide & diving board</li>
+                        <li>✓ Large playground with rubberized surface</li>
+                        <li>✓ In-ground trampoline</li>
+                        <li>✓ Multiple swing sets</li>
+                        <li>✓ Indoor & outdoor sport courts</li>
+                        <li>✓ Theater room for movies</li>
+                        <li>✓ Game room with arcade games</li>
+                        <li>✓ Hidden play spaces throughout</li>
+                    </ul>
+                </div>
+                <div class="generation-column">
+                    <h3>👴 Adults & Seniors</h3>
+                    <ul>
+                        <li>✓ Spa/jacuzzi for relaxation</li>
+                        <li>✓ Large sauna (fits 15)</li>
+                        <li>✓ Baby grand piano in formal living</li>
+                        <li>✓ Multiple quiet reading areas</li>
+                        <li>✓ Spacious decks with mountain views</li>
+                        <li>✓ Gazebo and fire pit areas</li>
+                        <li>✓ Elevator access to all floors</li>
+                        <li>✓ Accessible bathrooms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="everyone-together">
+                <h3>🏀 Everyone Together</h3>
+                <div class="activities-grid">
+                    <div class="activity-item">
+                        <p>Family Volleyball</p>
+                        <p>Indoor & outdoor courts</p>
+                    </div>
+                    <div class="activity-item">
+                        <p>Group Dinners</p>
+                        <p>Seating for 50+</p>
+                    </div>
+                    <div class="activity-item">
+                        <p>Movie Nights</p>
+                        <p>Professional theater</p>
+                    </div>
+                    <div class="activity-item">
+                        <p>Outdoor Games</p>
+                        <p>9-square, ladder ball</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="acres-section">
+            <div>
+                <img src="https://uc.orez.io/i/5ab5b723a95f428dab9446dd23dee789-Large" alt="Backyard Activities">
+            </div>
+            <div class="acres-content">
+                <h2>1.7 Private Acres</h2>
+                <p>
+                    Our expansive gated property provides plenty of space for outdoor family activities. From organized games to exploring nature, there's room for everyone to spread out and enjoy.
+                </p>
+                <ul>
+                    <li>✓ Covered gazebo for gatherings</li>
+                    <li>✓ Multiple deck levels</li>
+                    <li>✓ Fire pit for evening s'mores</li>
+                    <li>✓ Seasonal creek to explore</li>
+                    <li>✓ Stunning mountain backdrops</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="stories-section">
+            <h2>Real Reunion Stories</h2>
+            <p>
+                Don't just take our word for it - hear from families who've created unforgettable memories at Mountain View Mansion
+            </p>
+            
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        "We had a family reunion of 27 people, ages 2½ to 77. Place was perfect, pool was a great hit, plenty of cooking room, great beds, play ground outside was a big hit. Lisa and Adam were fantastic!"
+                    </p>
+                    <p>— Linda B., Family Reunion</p>
+                </div>
+                
+                <div class="story-card">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        "We did a father & son trip and this location had EVERYTHING you could possibly want and exceptional Mountain views! We had an absolute blast making lifelong memories on this trip."
+                    </p>
+                    <p>— Paul, Father & Sons Trip</p>
+                </div>
+                
+                <div class="story-card">
+                    <div class="stars">★★★★★</div>
+                    <p>
+                        "Amazing one-of-a-kind Mansion. So much room...so many amenities you won't find anywhere else. The ideal spot for a family reunion or any group get together."
+                    </p>
+                    <p>— Robert B., Family Reunion</p>
+                </div>
+            </div>
+            
+            <a href="reviews.html" class="stories-link">
+                Read More Reviews
+            </a>
+        </div>
+
+        <div class="planning-section">
+            <h2>Planning Your Reunion</h2>
+            <p>
+                We've hosted hundreds of successful family reunions. Here are our top tips for making yours unforgettable:
+            </p>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>📅 Book Early</h4>
+                    <p>Popular dates fill up 6-12 months in advance, especially summer and holidays. Reserve your dates as soon as possible.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>🗓️ Plan Activities</h4>
+                    <p>Create a loose schedule with group meals, activities, and free time. We can help with activity suggestions!</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>🍕 Food Options</h4>
+                    <p>Use our three kitchens for group cooking, order catering, or mix both. Grocery stores are 10 minutes away.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>📸 Capture Memories</h4>
+                    <p>The property offers stunning photo locations. Consider hiring a photographer for a family photo session.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>🎯 Set Expectations</h4>
+                    <p>Share house rules and schedules with attendees before arrival. Clear communication ensures harmony.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>🧹 Divide & Conquer</h4>
+                    <p>Assign meal prep and cleanup duties to different families. Teamwork makes everything easier!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-cta">
+            <h2>Ready to Gather Your Family?</h2>
+            <p>
+                Start planning your unforgettable reunion at Mountain View Mansion today
+            </p>
+            <div class="cta-buttons">
+                <a href="booking.html" class="cta-button primary">
+                    Check Availability
+                </a>
+                <a href="contact.html" class="cta-button secondary">
+                    Request Information
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

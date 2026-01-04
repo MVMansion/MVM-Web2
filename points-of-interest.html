@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Points of Interest | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://mvmansion.com/wp-content/uploads/2024/10/IMG_7845-scaled-1.jpg') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .category-section {
+            margin-bottom: 5rem;
+        }
+        
+        .category-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .poi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .poi-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .poi-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .poi-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .poi-content {
+            padding: 1.5rem;
+        }
+        
+        .poi-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .poi-content h3 a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .poi-content h3 a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Mountain View Mansion" style="height: 50px;"></a>
+            <button class="mobile-menu-toggle">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown"><a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="nearby-activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div>
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Points of Interest</h1>
+            <p style="font-size: 1.3rem;">Discover the Best of Utah Valley</p>
+        </div>
+    </section>
+
+    <div class="container" style="padding: 6rem 2rem;">
+        <div style="text-align: center; max-width: 900px; margin: 0 auto 5rem;">
+            <h2 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 1.5rem;">Perfectly Located</h2>
+            <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
+                Mountain View Mansion is perfectly located near a variety of exciting points of interest. From stunning outdoor experiences to cultural attractions, shopping, and entertainment - everything you need is just minutes away.
+            </p>
+            <p style="font-size: 1.1rem; color: var(--primary); margin-top: 1rem; font-weight: 600;">
+                For additional ideas of interesting outings in the Utah Valley area, visit <a href="https://www.utahvalley.com/" target="_blank" style="color: var(--primary);">utahvalley.com</a>
+            </p>
+        </div>
+
+        <div class="category-section" id="Recreation">
+            <h2 class="category-title">🏔️ Recreation</h2>
+            <div class="poi-grid">
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/IMG_7845-scaled-1.jpg" alt="Palisade Park" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://orem.org/palisade-park/" target="_blank">Palisade Park</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/127799339.jpg" alt="Sundance Resort" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.sundanceresort.com/" target="_blank">Sundance Resort</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Nature">
+            <h2 class="category-title">🌲 Nature</h2>
+            <div class="poi-grid">
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Bridal-Veil-Falls-1-1-scaled-1.jpeg" alt="Bridal Veil Falls" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.utahvalley.com/listing/bridal-veil-falls/41/" target="_blank">Bridal Veil Falls</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/utah-county_jay-droghns_timpanogos-cave-16.jpg" alt="Timpanogos Cave" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.nps.gov/tica/index.htm" target="_blank">Timpanogos Cave</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Bryce_Canyon_Blue_sky_AdobeStock_121552392-scaled.jpeg" alt="National Parks" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.nps.gov/state/ut/index.htm" target="_blank">National Parks (Day Trips)</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Crater-Interior-Rain.webp" alt="Homestead Crater" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.gohebervalley.com/utah-crater/" target="_blank">Natural Mineral Crater</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Culture">
+            <h2 class="category-title">🎭 Culture</h2>
+            <div class="poi-grid">
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Abravanel-Hall-Custom.jpg" alt="Abravanel Hall" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.saltlakecountyarts.org/venues/abravanel-hall/" target="_blank">Abravanel Hall in SLC</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/venue-featured-Ashley-Dean-1632008331.jpeg" alt="Hale Center Theater" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.haletheater.org/" target="_blank">Hale Center Theater</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/p2308-Scera-exteriors-084_smaller.jpg" alt="Scera Theater" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://scera.org/" target="_blank">Scera Theater</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/34035522860_73a15a9635_b.jpg" alt="BYU Museum of Art" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://moa.byu.edu/" target="_blank">BYU Museum of Art</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/665255_orig.jpg" alt="Covey Center" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.provo.org/community/covey-center-for-the-arts" target="_blank">Covey Center for the Arts</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Shopping">
+            <h2 class="category-title">🛍️ Shopping</h2>
+            <div class="poi-grid">
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/ta-img-20151030-105459.jpg" alt="Harmons" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.harmonsgrocery.com/" target="_blank">Harmons - Groceries</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/kiowk5s5phv71-scaled.jpg" alt="Costco" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.costco.com/warehouse-locations/orem-UT-484.html" target="_blank">Costco</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/shopsatriverwoods.jpg" alt="Shops at Riverwoods" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://shopsatriverwoods.com/" target="_blank">Shops at Riverwoods</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/49735926916_db3546ed1e_b.jpg" alt="University Mall" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://universityplaceorem.com/" target="_blank">University Mall</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Entertainment">
+            <h2 class="category-title">🎬 Entertainment</h2>
+            <div class="poi-grid">
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/provo-beach-1.jpg" alt="Provo Beach" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://provobeach.com/" target="_blank">Provo Beach</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/159237.avif" alt="AMC Provo 8" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.amctheatres.com/movie-theatres/salt-lake-city/amc-provo-8" target="_blank">AMC Provo 8</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/6049333_orig.jpg" alt="Cinemark" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.cinemark.com/theatres/ut-orem/cinemark-university-mall" target="_blank">Cinemark University Mall</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/MEGAPLEX0-ef5b76445056a36_ef5b7872-5056-a36a-06c4ab332bf41933.jpg" alt="Megaplex" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.megaplextheatres.com/geneva" target="_blank">Megaplex Theaters</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/steep-front-copy.jpg" alt="Fat Cats" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.fatcatsfun.com/locations/provo/" target="_blank">Fat Cats</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Golf">
+            <h2 class="category-title">⛳ Golf</h2>
+            <div class="poi-grid">
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/clubhouse_orig.jpg" alt="Timpanogos Golf Club" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.timpanogosgolf.com/" target="_blank">Timpanogos Golf Club</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/OMNI_image002.png" alt="TalonsCove" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.talonscove.com/" target="_blank">TalonsCove Golf Club</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/103551-1024x505-1.jpg" alt="Fox Hollow" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.foxhollowutah.com/" target="_blank">Fox Hollow Golf Club</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/ThanksgivingPoint1-1024x512-1.jpg" alt="Thanksgiving Point Golf" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.thanksgivingpointgolfclub.com/" target="_blank">Thanksgiving Point Golf Club</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/asdads-1024x576-1.jpg" alt="The Ranches" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://theranchesgolfclub.com/" target="_blank">The Ranches Golf Club</a></h3>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/4093318762_120434ff90_b.jpg" alt="Sleepy Ridge" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.sleepyridgegolf.com/" target="_blank">Sleepy Ridge Golf Course</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Travel">
+            <h2 class="category-title">✈️ Travel</h2>
+            <div class="poi-grid">
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Airport-Money-Shot-2-1536x1023-1.jpeg" alt="Provo Airport" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://flyprovoairport.com/" target="_blank">Provo Airport</a></h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Allegiant, American, Breeze - 20 minutes</p>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Salt-Lake-City-International-Airport-Terminal.jpg" alt="SLC Airport" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://slcairport.com/" target="_blank">Salt Lake City Airport</a></h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Most Airlines - 45 minutes</p>
+                    </div>
+                </div>
+                <div class="poi-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Frontrunner-South.jpg" alt="FrontRunner" class="poi-image">
+                    <div class="poi-content">
+                        <h3><a href="https://www.rideuta.com/" target="_blank">FrontRunner/Trax to Vineyard</a></h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Rail from SLC Airport - 2 hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

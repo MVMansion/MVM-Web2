@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concierge Services | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://mvmansion.com/wp-content/uploads/2025/03/loaded-potato-bar-683x1024.jpg') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-image {
+            width: 100%;
+            /* height: 300px; */
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 2.5rem;
+        }
+
+        .service-content p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .service-content p.italic {
+            font-style: italic;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-price {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 1.5rem 0;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .intro-section {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 5rem;
+        }
+
+        .intro-section h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .dining-section {
+            position: relative;
+            background: url("https://mvmansion.com/wp-content/uploads/2025/05/charcuterie-board-3-1170x921.jpg") center/cover no-repeat;
+            color: black;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .dining-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.5);
+            z-index: 1;
+            border-radius: inherit;
+        }
+
+        .dining-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .dining-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        
+
+        .dining-tax {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .dining-note {
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        .dining-details {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.5);
+            border-radius: 10px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dining-details p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .meals-heading {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: -2rem;
+        }
+
+        .meals-price {
+            text-align: center;            
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2rem 0;
+        }        
+        .event-venue {
+            background: var(--light);
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            margin: 5rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .event-venue img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .event-venue h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .event-venue p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .event-venue ul {
+            color: var(--gray);
+            line-height: 2;
+            margin-left: 1.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .services-heading {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .day-rentals {
+            background: white;
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .day-rentals h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .day-rentals p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .day-rentals img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .contact-section {
+            background: var(--primary);
+            color: white;
+            padding: 5rem 3rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+        }
+
+        .contact-box {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-box h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .contact-box a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-footer {
+            opacity: 0.85;
+        }
+
+        .small-muted {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .accent-italic {
+            color: var(--primary);
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .accent-strong {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .container-concierge {
+            padding: 6rem 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .event-venue {
+                grid-template-columns: 1fr;
+            }
+
+            .day-rentals {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Mountain View Mansion">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="concierge.html">Concierge</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div>
+            <h1>Concierge Services</h1>
+            <p>Let us worry about the details</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <div class="container container-concierge">
+        
+        <div class="intro-section">
+            <h2>Enhance Your Stay</h2>
+            <p>
+                Make your stay at Mountain View Mansion even more special with our optional concierge services. From elevated dining experiences to relaxing spa treatments, we offer a variety of add-ons to make your visit unforgettable.
+            </p>
+        </div>
+
+        <!-- MVM Dining Group Options -->
+        <div class="dining-section">
+            <h2>MVM Dining Menu</h2>
+            <p class="dining-tax">plus tax and 25% service fee</p>
+            <p class="dining-note">Price includes set up/takedown & plates, bowls, cutlery, napkins, etc.</p>
+            <div class="dining-details">
+                <p>
+                    <strong>📋 Important:</strong> Please submit your order 10 business days before your meal. Meals are not currently available on Sundays. Minimum order amounts apply.
+                </p>
+            </div>
+            <a href="https://1drv.ms/b/c/beac7ecc2b111a54/ESGkTVbSgGBFvfQsoGQyBw8B2Q36hm2IYthMfHV77JMBdw?e=3pcjPd" target="_blank" class="cta-button">
+                View Full Menu (PDF)
+            </a>
+        </div>
+
+        <!-- Meal Options -->
+        <h2 class="meals-heading">MVM Dining Group Meal Options</h2>
+        <div class="meals-price">$16 per person per meal</div>
+        <div class="services-grid">       
+            <div class="service-card">
+                <img src="https://mvmansion.com/wp-content/uploads/2025/03/Lasagna-1024x633.png" alt="Lasagna Meal" class="service-image">
+                <div class="service-content">
+                    <h3>Lasagna Meal</h3>
+                    <p>
+                        Our lasagna includes layers of meat sauce, ground beef, ricotta cheese, mozzarella, and pasta. Meatless option available upon request. Served with garlic bread and Caesar salad.
+                    </p>
+                    <div class="service-price">$16 per person</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://mvmansion.com/wp-content/uploads/2025/03/BBQ.png" alt="BBQ Meal" class="service-image">
+                <div class="service-content">
+                    <h3>Good Ole' Country BBQ</h3>
+                    <p>
+                        Select two meats: barbecue brisket, pulled pork, or smoked chicken thigh. Choose two sides from barbecue beans, mashed potatoes, or tossed salad. Served with rolls.
+                    </p>
+                    <p class="italic">Add peach cobbler for $1 per person</p>
+                    <div class="service-price">$16 per person</div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://mvmansion.com/wp-content/uploads/2025/03/Taco-Bar-1024x538.png" alt="Taco Bar" class="service-image">
+                <div class="service-content">
+                    <h3>Taco Bar</h3>
+                    <p>
+                        Grilled beef and chicken or pork, served with flour or wheat tortillas. Includes black or refried beans, Spanish rice, lettuce, cheese, large salad with cilantro-lime vinaigrette.
+                    </p>
+                    <p class="italic">Add guacamole or sour cream for $1 per person</p>
+                    <div class="service-price">$16 per person</div>
+                </div>
+            </div>
+        </div>
+        <!-- Event Venue -->
+        <div class="event-venue">
+            <div>
+                <img src="https://mvmansion.com/wp-content/uploads/2025/03/newlyweds.jpg" alt="Wedding Event">
+            </div>
+            <div>
+                <h2>Event Venue for Celebrations</h2>
+                <p>
+                    Host your wedding, celebration, rehearsal, or special event meal at Mountain View Mansion. Now available for groups of 50 or fewer.
+                </p>
+                <ul>
+                    <li>Event must be accompanied by 4+ night stay renting entire Mansion</li>
+                    <li>Day guests: $10 per person (may not stay past 11:00 PM)</li>
+                    <li>Limited chairs, tables, and linens available</li>
+                    <li>Parking limited to 15 cars on-site</li>
+                    <li>Additional parking at Palisades Park (3 blocks north) - shuttling recommended</li>
+                    <li>All events must end by 10:00 PM (noise ordinance)</li>
+                        <li>Outdoor music/PA systems permitted with limited volume</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Services -->
+        
+        <h2 class="services-heading">Additional Concierge Services</h2>
+
+        <div class="services-grid">
+            
+            <!-- Dole Whip -->
+            <div class="service-card">
+                <img src="https://mvmansion.com/wp-content/uploads/elementor/thumbs/Ice-Cream-Bar-r66xh6zy4h4lwfjl3qtgiciq8oozooa8l2yx0bxrxe.png" alt="Ice Cream Bar" class="service-image">
+                <div class="service-content">
+                    <h3>Dole Whip, Vanilla, Chocolate Soft Serve</h3>
+                    <p>
+                        Signature pineapple Dole whips with a twist - add pineapple and a cherry to top it all off. Vanilla/Chocolate soft serve ice cream also available.
+                    </p>
+                    <div class="service-price">
+                        $5 per serving<br>
+                        <span class="small-muted">Minimum 10 servings ($50)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Italian Sodas -->
+            <div class="service-card">
+                <img src="https://mvmansion.com/wp-content/uploads/elementor/thumbs/Italian-Soda-Bar-2-r66wc1m93smwwv379p7cz9tr26vdmw2gny6ohl0rz8.png" alt="Italian Soda Bar" class="service-image">
+                <div class="service-content">
+                    <h3>Italian Sodas</h3>
+                    <p>
+                        Known in Utah as "dirty sodas" - a huge hit with kids and adults alike! Our Italian Soda Bar includes choices of up to 7 Torani syrups plus add-ins: whipped cream, creamer, and garnish cherries, lemons, or pineapple.
+                    </p>
+                    <p class="accent-italic">Ask us about the Utah phenomenon!</p>
+                    <div class="service-price">$50 per day (up to 20 people)</div>
+                </div>
+            </div>
+
+            <!-- Coffee/Cocoa Bar -->
+            <div class="service-card">
+                <img src="https://mvmansion.com/wp-content/uploads/elementor/thumbs/Coffee-Bar-2-r66tlbmj4znk9cpqus90z56fzk3pa405os6t51bp74.jpg" alt="Coffee Bar" class="service-image">
+                <div class="service-content">
+                    <h3>Coffee/Cocoa Hot Beverage Bar</h3>
+                    <p>
+                        Complete coffee experience including espresso beans, Starbucks coffee (regular & decaf), K-pods, green/black/herbal teas. Includes 2 coffee pots, 2 teapots, 2 grinders, and espresso machine.
+                    </p>
+                    <p>
+                        6 Torani syrups (Irish cream, caramel, vanilla, hazelnut, peppermint, sugar-free), creamers, chocolate syrup, whipped cream, milk, and almond/oat milk. Variety of hot cocoas and apple cider (up to 4 cocoa varieties).
+                    </p>
+                    <div class="service-price">$50 per day (up to 20 people)</div>
+                </div>
+            </div>
+
+            <!-- Massage/Facials -->
+            <div class="service-card">
+                <img src="https://mvmansion.com/wp-content/uploads/elementor/thumbs/Facial-Massage-r4svy7qcot1nh1lw01xecnlyzll683etvyedxo76yw.png" alt="Massage Services" class="service-image">
+                <div class="service-content">
+                    <h3>Massage or Facials</h3>
+                    <p>
+                        Escape to ultimate relaxation with on-site massage services. Our skilled therapists offer personalized treatments, from rejuvenating facials to soothing massages. Choose from Swedish, deep tissue, and aromatherapy massages.
+                    </p>
+                    <p class="accent-strong">Professional Massage Services</p>
+                    <div class="service-price">
+                        30 min: $70 • 60 min: $100 • 90 min: $150<br>
+                        <span class="small-muted">Minimum 3 bookings required for on-site service</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Escape Room -->
+            <div class="service-card">
+                <img src="https://mvmansion.com/wp-content/uploads/elementor/thumbs/Screenshot-2024-10-05-135925-qv4t0mincf1z5sof5hq3x7vpkw3fogtxhryddvoboe.png" alt="AI Escape Room" class="service-image">
+                <div class="service-content">
+                    <h3>AI Escape Room</h3>
+                    <p>
+                        Experience our AI-hosted escape room integrated into the Mansion! Recommended for groups of 2-6 at a time, you'll have one hour to solve the mystery. Your time will be recorded on the leaderboard - compete with other teams during your stay!
+                    </p>
+                    <p class="accent-strong">Incredible value compared to $30-40 at nearby escape rooms - and no traveling required!</p>
+                    <div class="service-price">$10 per person (tax included)</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Day Rentals -->
+        <div class="day-rentals">
+            <div>
+                <div>
+                    <h2>Day Rentals Available</h2>
+                    <p>
+                        The Mansion amenities are available to rent on an hourly basis. Enjoy the pool area, playground, sport courts, scenic lower deck, and much more.
+                    </p>
+                    <p>
+                        Fees based on number of individuals and facilities rented. Call for availability and pricing details.
+                    </p>
+                    <a href="tel:+14259416203" class="cta-button">Call for Details: (425) 941-6203</a>
+                </div>
+                <div>
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/10/3R0A3581-1-1024x683.jpg" alt="Day Rental">
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact for Services -->
+        <div class="contact-section">
+            <h2>Book Your Concierge Services</h2>
+            <p>
+                Contact us to arrange any of these special services for your stay
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <h3>General Services</h3>
+                    <p><a href="mailto:stay@mvmansion.com">📧 stay@mvmansion.com</a></p>
+                    <p><a href="tel:+14259416203">📞 (425) 941-6203</a></p>
+                </div>
+                
+                <div class="contact-box">
+                    <h3>Food Services</h3>
+                    <p><a href="mailto:Jenna@mountainViewMansion.com">📧 Jenna@mountainViewMansion.com</a></p>
+                    <p><a href="tel:+14252085092">📞 (425) 208-5092</a></p>
+                </div>
+            </div>
+            
+            <p class="contact-footer">Available Monday - Sunday: 9:00 AM – 10:00 PM</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

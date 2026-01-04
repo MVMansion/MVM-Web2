@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Activities | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .logo img {
+            height: 50px;
+        }
+
+        .activities-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://uc.orez.io/i/e354cd9da0be410a9020c7d83d393613-Large') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .activities-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .activities-hero p {
+            font-size: 1.3rem;
+        }
+
+        .activities-container {
+            padding: 6rem 2rem;
+        }
+
+        .activity-category {
+            margin-bottom: 5rem;
+        }
+
+        .activity-category h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .activity-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .activity-card p {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-card p.distance {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .hiking-section {
+            background: var(--light);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 5rem;
+        }
+
+        .hiking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .hiking-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .hiking-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .hiking-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .water-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .water-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .water-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .water-card p {
+            color: var(--gray);
+        }
+
+        .parks-section {
+            background: var(--primary);
+            color: white;
+            padding: 5rem 3rem;
+            border-radius: 20px;
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        .parks-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .parks-section > p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .parks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .park-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .park-card h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .park-card p {
+            opacity: 0.9;
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .attraction-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 10px;
+        }
+
+        .attraction-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .attraction-item h4 {
+            color: var(--primary);
+        }
+
+        .attraction-item p {
+            color: var(--gray);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Mountain View Mansion" style="height: 50px;">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+
+    <section class="activities-hero">
+        <div>
+            <h1>Nearby Activities</h1>
+            <p>Adventure Awaits Just Minutes Away</p>
+        </div>
+    </section>
+
+    <div class="container activities-container">
+        
+        <!-- Winter Sports -->
+        <div class="activity-category">
+            <h2>⛷️ Winter Sports & Skiing</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <h3>Sundance Resort</h3>
+                    <p>World-class skiing founded by Robert Redford</p>
+                    <p class="distance">10 miles • 15 minutes</p>
+                </div>
+                <div class="activity-card">
+                    <h3>Park City Resorts</h3>
+                    <p>Deer Valley, Park City Mountain</p>
+                    <p class="distance">35 miles • 40 minutes</p>
+                </div>
+                <div class="activity-card">
+                    <h3>Brighton & Solitude</h3>
+                    <p>Big Cottonwood Canyon resorts</p>
+                    <p class="distance">40 miles • 45 minutes</p>
+                </div>
+                <div class="activity-card">
+                    <h3>Snowbird & Alta</h3>
+                    <p>Little Cottonwood Canyon powder</p>
+                    <p class="distance">45 miles • 50 minutes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hiking -->
+        <div class="hiking-section">
+            <h2>🥾 Hiking & Nature</h2>
+            <div class="hiking-grid">
+                <div class="hiking-card">
+                    <h4>Mount Timpanogos</h4>
+                    <p>Challenging 14-mile summit hike with incredible views</p>
+                </div>
+                <div class="hiking-card">
+                    <h4>Stewart Falls</h4>
+                    <p>Beautiful waterfall hike, family-friendly</p>
+                </div>
+                <div class="hiking-card">
+                    <h4>Bridal Veil Falls</h4>
+                    <p>Easy walk to stunning 607-foot waterfall</p>
+                </div>
+                <div class="hiking-card">
+                    <h4>Provo River Parkway</h4>
+                    <p>Paved trail for walking, running, biking</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Water Activities -->
+        <div class="activity-category">
+            <h2>🚣 Water Activities</h2>
+            <div class="water-grid">
+                <div class="water-card">
+                    <h3>Utah Lake</h3>
+                    <p>Boating, fishing, paddleboarding • 10 miles</p>
+                </div>
+                <div class="water-card">
+                    <h3>Deer Creek Reservoir</h3>
+                    <p>Sailing, fishing, water sports • 15 miles</p>
+                </div>
+                <div class="water-card">
+                    <h3>Provo River</h3>
+                    <p>World-class fly fishing • 2 miles</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- National Parks -->
+        <div class="parks-section">
+            <h2>🏜️ Utah's Mighty 5 National Parks</h2>
+            <p>Perfect day trips from Mountain View Mansion</p>
+            <div class="parks-grid">
+                <div class="park-card">
+                    <h4>Zion National Park</h4>
+                    <p>4 hours south</p>
+                </div>
+                <div class="park-card">
+                    <h4>Bryce Canyon</h4>
+                    <p>4 hours south</p>
+                </div>
+                <div class="park-card">
+                    <h4>Arches</h4>
+                    <p>3.5 hours southeast</p>
+                </div>
+                <div class="park-card">
+                    <h4>Canyonlands</h4>
+                    <p>3.5 hours southeast</p>
+                </div>
+                <div class="park-card">
+                    <h4>Capitol Reef</h4>
+                    <p>3.5 hours south</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Local Attractions -->
+        <div class="activity-category">
+            <h2>🎭 Local Attractions</h2>
+            <div class="attractions-grid">
+                <div class="attraction-item">
+                    <div class="attraction-emoji">🏫</div>
+                    <h4>BYU Campus</h4>
+                    <p>University tours, sports events</p>
+                </div>
+                <div class="attraction-item">
+                    <div class="attraction-emoji">🌺</div>
+                    <h4>Thanksgiving Point</h4>
+                    <p>Gardens, museums, activities</p>
+                </div>
+                <div class="attraction-item">
+                    <div class="attraction-emoji">🎢</div>
+                    <h4>Seven Peaks</h4>
+                    <p>Water park (summer)</p>
+                </div>
+                <div class="attraction-item">
+                    <div class="attraction-emoji">🛍️</div>
+                    <h4>Shopping</h4>
+                    <p>University Mall, boutiques</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

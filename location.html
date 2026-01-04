@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location & Directions | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://uc.orez.io/i/05550c252b214beab14917fe26e61f92-Large') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .location-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .map-section {
+            margin-bottom: 4rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 500px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.2rem;
+        }
+        
+        .address-card {
+            background: var(--primary);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .address-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .address-card p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .address-card a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .directions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .direction-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .direction-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .direction-icon {
+            font-size: 2rem;
+        }
+        
+        .direction-card ol {
+            margin-left: 1.5rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .direction-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .distance-info {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--light);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .nearby-section {
+            background: var(--light);
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 4rem;
+        }
+        
+        .nearby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .nearby-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .nearby-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nearby-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+        }
+
+        .map-center-text {
+            text-align: center;
+        }
+
+        .map-center-text p {
+            margin-bottom: 1rem;
+        }
+
+        .map-center-text p:last-child {
+            font-size: 0.9rem;
+        }
+
+        .address-card p:nth-of-type(4) {
+            margin-top: 2rem;
+        }
+
+        .directions-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .arrival-info {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 4rem;
+        }
+
+        .arrival-info h3 {
+            color: #856404;
+            margin-bottom: 1rem;
+        }
+
+        .arrival-info ul {
+            color: #856404;
+            line-height: 2;
+        }
+
+        .nearby-section-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .nearby-section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nearby-item-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .attractions-section {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+        }
+
+        .attractions-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .attraction-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .attraction-card h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .attraction-distance {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .attraction-time {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Mountain View Mansion">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div>
+            <h1>Location & Directions</h1>
+            <p>At the mouth of beautiful Provo Canyon</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <div class="location-container">
+        <!-- Map -->
+        <div class="map-section">
+            <div class="map-placeholder">
+                <div class="map-center-text">
+                    <p>📍 Interactive Google Map</p>
+                    <p>Embed your Google Maps iframe here</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Address -->
+        <div class="address-card">
+            <h2>Mountain View Mansion</h2>
+            <p>Mouth of Provo Canyon</p>
+            <p>Orem, Utah 84097</p>
+            <p>
+                <a href="tel:+14259416203">📞 +1 (425) 941-6203</a>
+            </p>
+            <p>
+                <a href="mailto:stay@mvmansion.com">📧 stay@mvmansion.com</a>
+            </p>
+        </div>
+
+        <!-- Driving Directions -->
+        <h2 class="directions-title">
+            Driving Directions
+        </h2>
+        
+        <div class="directions-grid">
+            <div class="direction-card">
+                <h3><span class="direction-icon">🛫</span> From Salt Lake City Airport</h3>
+                <ol>
+                    <li>Head south on I-15 S</li>
+                    <li>Continue for approximately 45 miles</li>
+                    <li>Take exit 272 for US-89 toward Provo</li>
+                    <li>Turn left onto E University Pkwy</li>
+                    <li>Turn right onto Canyon Rd/US-189 N</li>
+                    <li>Destination will be on your right at the mouth of Provo Canyon</li>
+                </ol>
+                <p class="distance-info">⏱️ Approximately 50 minutes</p>
+            </div>
+
+            <div class="direction-card">
+                <h3><span class="direction-icon">🏙️</span> From Downtown Salt Lake City</h3>
+                <ol>
+                    <li>Head south on I-15 S</li>
+                    <li>Continue for approximately 50 miles</li>
+                    <li>Take exit 272 for US-89</li>
+                    <li>Turn left onto E University Pkwy</li>
+                    <li>Turn right onto Canyon Rd/US-189 N</li>
+                    <li>Look for entrance at mouth of Provo Canyon</li>
+                </ol>
+                <p class="distance-info">⏱️ Approximately 55 minutes</p>
+            </div>
+
+            <div class="direction-card">
+                <h3><span class="direction-icon">🏫</span> From BYU/Provo</h3>
+                <ol>
+                    <li>Head east on University Ave</li>
+                    <li>Continue onto Canyon Rd/US-189 N</li>
+                    <li>Drive approximately 3 miles</li>
+                    <li>Mansion is located at the mouth of Provo Canyon</li>
+                    <li>Look for gated entrance</li>
+                </ol>
+                <p class="distance-info">⏱️ Approximately 10 minutes</p>
+            </div>
+
+            <div class="direction-card">
+                <h3><span class="direction-icon">🗻</span> From Park City</h3>
+                <ol>
+                    <li>Head south on US-189 S</li>
+                    <li>Continue through Heber City</li>
+                    <li>Follow US-189 S through Provo Canyon</li>
+                    <li>Destination at mouth of canyon on left</li>
+                </ol>
+                <p class="distance-info">⏱️ Approximately 35 minutes</p>
+            </div>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="arrival-info">
+            <h3>📌 Important Arrival Information</h3>
+            <ul>
+                <li><strong>Gate Code:</strong> You will receive the gate code via email 24 hours before check-in</li>
+                <li><strong>Check-in Time:</strong> 4:00 PM</li>
+                <li><strong>GPS Coordinates:</strong> Will be provided upon booking confirmation</li>
+                <li><strong>Gated Property:</strong> Look for the automatic gates at the entrance</li>
+                <li><strong>Night Arrival:</strong> Property is well-lit for evening arrivals</li>
+            </ul>
+        </div>
+
+        <!-- Nearby Essentials -->
+        <div class="nearby-section">
+            <h2 class="nearby-section-title">
+                Nearby Essentials
+            </h2>
+            <p class="nearby-section-subtitle">
+                Everything you need is just minutes away from Mountain View Mansion
+            </p>
+            
+            <div class="nearby-grid">
+                <div class="nearby-item">
+                    <div class="nearby-item-emoji">🏪</div>
+                    <h4>Grocery Stores</h4>
+                    <p>Walmart, Smith's, Costco</p>
+                    <p><strong>5-10 minutes</strong></p>
+                </div>
+                
+                <div class="nearby-item">
+                    <div class="nearby-item-emoji">⛽</div>
+                    <h4>Gas Stations</h4>
+                    <p>Multiple options nearby</p>
+                    <p><strong>5 minutes</strong></p>
+                </div>
+                
+                <div class="nearby-item">
+                    <div class="nearby-item-emoji">🍔</div>
+                    <h4>Restaurants</h4>
+                    <p>Variety of dining options</p>
+                    <p><strong>5-10 minutes</strong></p>
+                </div>
+                
+                <div class="nearby-item">
+                    <div class="nearby-item-emoji">🏥</div>
+                    <h4>Hospital</h4>
+                    <p>Utah Valley Hospital</p>
+                    <p><strong>10 minutes</strong></p>
+                </div>
+                
+                <div class="nearby-item">
+                    <div class="nearby-item-emoji">💊</div>
+                    <h4>Pharmacy</h4>
+                    <p>Walgreens, CVS</p>
+                    <p><strong>5-7 minutes</strong></p>
+                </div>
+                
+                <div class="nearby-item">
+                    <div class="nearby-item-emoji">⛷️</div>
+                    <h4>Sundance Resort</h4>
+                    <p>Skiing & Activities</p>
+                    <p><strong>15 minutes</strong></p>
+                </div>
+                
+                <div class="nearby-item">
+                    <div class="nearby-item-emoji">🏫</div>
+                    <h4>BYU Campus</h4>
+                    <p>Brigham Young University</p>
+                    <p><strong>10 minutes</strong></p>
+                </div>
+                
+                <div class="nearby-item">
+                    <div class="nearby-item-emoji">🏞️</div>
+                    <h4>Provo Canyon</h4>
+                    <p>Hiking & Recreation</p>
+                    <p><strong>5 minutes</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Distances to Attractions -->
+        <div class="attractions-section">
+            <h2 class="attractions-title">
+                Distance to Major Attractions
+            </h2>
+            
+            <div class="attractions-grid">
+                <div class="attraction-card">
+                    <h4>Sundance Ski Resort</h4>
+                    <p class="attraction-distance">10 miles</p>
+                    <p class="attraction-time">15 minutes</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h4>Park City Resorts</h4>
+                    <p class="attraction-distance">35 miles</p>
+                    <p class="attraction-time">40 minutes</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h4>Brighton/Solitude</h4>
+                    <p class="attraction-distance">40 miles</p>
+                    <p class="attraction-time">45 minutes</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h4>Snowbird/Alta</h4>
+                    <p class="attraction-distance">45 miles</p>
+                    <p class="attraction-time">50 minutes</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h4>Temple Square SLC</h4>
+                    <p class="attraction-distance">50 miles</p>
+                    <p class="attraction-time">55 minutes</p>
+                </div>
+                
+                <div class="attraction-card">
+                    <h4>Utah Lake</h4>
+                    <p class="attraction-distance">10 miles</p>
+                    <p class="attraction-time">12 minutes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

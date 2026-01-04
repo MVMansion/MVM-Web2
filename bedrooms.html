@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedroom Suites | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://uc.orez.io/i/768eff96f4f54d6587636095759ea34c-Large') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .bedrooms-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .intro-section {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .intro-section h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .intro-section p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .bedroom-suite {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .bedroom-suite:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .bedroom-suite:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .bedroom-images {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .main-bedroom-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .main-bedroom-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .bedroom-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .bedroom-thumbnail {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 150px;
+        }
+        
+        .bedroom-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .bedroom-details h3 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .bedroom-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            font-weight: 600;
+        }
+        
+        .meta-item span {
+            font-size: 1.5rem;
+        }
+        
+        .bedroom-description {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .bedroom-features {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .bedroom-features h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .features-list li {
+            list-style: none;
+            padding: 0.5rem 0;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        
+        .features-list li:before {
+            content: "• ";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .capacity-summary {
+            background: var(--primary);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        .capacity-summary h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .capacity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .capacity-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .capacity-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .bedroom-suite {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+            
+            .bedroom-suite:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Mountain View Mansion">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div>
+            <h1>Luxurious Bedroom Suites</h1>
+            <p>11 uniquely themed rooms designed for comfort and style</p>
+        </div>
+    </section>
+
+    <!-- Bedrooms Content -->
+    <div class="bedrooms-container">
+        <!-- Introduction -->
+        <div class="intro-section">
+            <h2>Accommodations for Up to 50 Guests</h2>
+            <p>
+                Each of our 11 bedroom suites has been thoughtfully designed with unique themes, comfortable bedding, and premium amenities. From intimate master suites to spacious bunk rooms perfect for kids, Mountain View Mansion offers the perfect sleeping arrangement for groups of all sizes.
+            </p>
+        </div>
+
+        <!-- Paris Master Suite -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/768eff96f4f54d6587636095759ea34c-Large" alt="Paris Master Suite">
+                </div>
+                <div class="bedroom-thumbnails">
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/4dfbcac392aa45b2ad3608f6983ab0f8-Large" alt="Paris Bath">
+                    </div>
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/2189f4815d194e1a8cb07fc55b8b5706-Large" alt="Paris Deck">
+                    </div>
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>Paris Master Suite</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 4
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Upper Level
+                    </div>
+                    <div class="meta-item">
+                        <span>🚿</span> Ensuite Bath
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    Step into Parisian elegance with our most spectacular suite. Floor-to-ceiling hand-painted murals transport you to the streets of Paris, complete with the Eiffel Tower and Seine River. This upper-level master features a king bed, pullout sofa, private deck with breathtaking mountain views, and an enormous ensuite bathroom with steam shower and jetted tub.
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>King bed + sofa sleeper</li>
+                        <li>Floor-to-ceiling Paris murals</li>
+                        <li>Private outdoor deck</li>
+                        <li>Steam shower & jetted tub</li>
+                        <li>Triple vanity bathroom</li>
+                        <li>Enormous walk-in closet</li>
+                        <li>TV with Roku</li>
+                        <li>Gas fireplace</li>
+                        <li>Desk workspace</li>
+                        <li>Mini fridge & microwave</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mt. Timpanogos Suite (Main Master) -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/55b53ef147db42688967128bea6756c4-Large" alt="Main Master Bedroom">
+                </div>
+                <div class="bedroom-thumbnails">
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/30c08e0b1eb94dcda5f5e97a24b971f8-Large" alt="Main Master Bath">
+                    </div>
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/6eb46b5c0d8646ffaa52741762cbfabc-Large" alt="Master Shower">
+                    </div>
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>Mt. Timpanogos Suite</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 5
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Main Level
+                    </div>
+                    <div class="meta-item">
+                        <span>♿</span> Accessible
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    The main floor master suite offers luxury and convenience with accessibility features. This spacious room includes a king bed, trundle bed, pullout couch, and direct deck access. The enormous ensuite bathroom features accessibility bars, double shower, jetted tub, and a massive walk-in closet.
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>King bed + trundle + futon</li>
+                        <li>Main floor location</li>
+                        <li>Direct deck access</li>
+                        <li>Accessible bathroom</li>
+                        <li>Double walk-in shower</li>
+                        <li>Jetted tub</li>
+                        <li>Large walk-in closet</li>
+                        <li>TV with Roku</li>
+                        <li>Desk workspace</li>
+                        <li>Mini fridge & microwave</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blue Sky Suite -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/5024ffa1b05a4f10971fb46df9d9ecdc-Large" alt="Blue Sky Suite">
+                </div>
+                <div class="bedroom-thumbnails">
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/1b64af2e985745759046b0ca8f7cf479-Large" alt="Blue Sky Bath">
+                    </div>
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/4b6f5c2ca7924c8fa154ae0efe47ce8b-Large" alt="Blue Room">
+                    </div>
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>Blue Sky Suite</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 6
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Upper Level
+                    </div>
+                    <div class="meta-item">
+                        <span>🚿</span> Master Bath
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    A spacious upper-level suite perfect for families, featuring a queen bed, bunk beds, twin bed, and pullout mattress. The master-sized ensuite bathroom includes a jetted tub and double vanity. Kids will love discovering the hidden spaces throughout the room!
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>Queen + bunks + twin + pullout</li>
+                        <li>Master-size bathroom</li>
+                        <li>Jetted tub</li>
+                        <li>Two walk-in closets</li>
+                        <li>Hidden play spaces</li>
+                        <li>TV with Roku</li>
+                        <li>Desk area</li>
+                        <li>Upper level views</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wild Horse Suite -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/575d72bedaa442b6bcbec2c40cd8be96-Medium" alt="Wild Horse Suite">
+                </div>
+                <div class="bedroom-thumbnails">
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/007a81bbc6334467a8a435d0c47d07a3-Large" alt="Horse Bath">
+                    </div>
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/2d95b5dc85c84ebc97e0e2afea23dbcb-Large" alt="Horse Theme">
+                    </div>
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>Wild Horse Suite</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 4
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Upper Level
+                    </div>
+                    <div class="meta-item">
+                        <span>🐴</span> Themed
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    Horse lovers will adore this themed suite featuring beautiful horse murals throughout. The room includes a queen bed, two twin beds, and a rollaway bed. Skylights provide natural light, and the ensuite bathroom continues the equestrian theme.
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>Queen + 2 twins + rollaway</li>
+                        <li>Horse-themed murals</li>
+                        <li>Skylights for natural light</li>
+                        <li>Ensuite bathroom</li>
+                        <li>Built-in desk</li>
+                        <li>TV with Roku</li>
+                        <li>Walk-in closet</li>
+                        <li>Upper level location</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bryce Canyon Suite -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/97dddfbd2e014cc2a49a45f238190334-Large" alt="Bryce Canyon Suite">
+                </div>
+                <div class="bedroom-thumbnails">
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/a14454a87c2f4edd961a396c5ed9ce1a-Large" alt="Bryce Bunks">
+                    </div>
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/28a504944fe04cfc84983fbc07253929-Large" alt="Bryce Bath">
+                    </div>
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>Bryce Canyon Suite</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 9
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Upper Level
+                    </div>
+                    <div class="meta-item">
+                        <span>👨‍👩‍👧‍👦</span> Family Friendly
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    Perfect for large families or groups, this suite features three double-over-twin bunk beds plus a queen bed, sleeping up to 9 guests. The room includes a large screen TV, ensuite bathroom with walk-in closet, and plenty of space for everyone.
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>3 double/twin bunks + queen</li>
+                        <li>Sleeps 9 guests</li>
+                        <li>Large screen TV</li>
+                        <li>Ensuite bathroom</li>
+                        <li>Walk-in closet</li>
+                        <li>Spacious layout</li>
+                        <li>Upper level</li>
+                        <li>Perfect for families</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coral Pink Sands Suite -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/53e1b64ba16a4126b0c7fb3d3cfd3679-Large" alt="Coral Pink Sands">
+                </div>
+                <div class="bedroom-thumbnails">
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/1ede885a2c7042cebf98f0e85529f7f2-Large" alt="Pink Room">
+                    </div>
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/3ee8b9ce656649efb9aae3e7af46ce70-Large" alt="Pink Bath">
+                    </div>
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>Coral Pink Sands Suite</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 3
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Upper Level
+                    </div>
+                    <div class="meta-item">
+                        <span>🚿</span> Ensuite Bath
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    This charming corner suite on the upper level features a full bed and queen bed, dresser, TV with Roku streaming, and an ensuite bathroom with walk-in closet. The warm color scheme creates a cozy and inviting atmosphere.
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>Full bed + queen bed</li>
+                        <li>Corner location with windows</li>
+                        <li>Ensuite bathroom</li>
+                        <li>Walk-in closet</li>
+                        <li>TV with Roku</li>
+                        <li>Dresser storage</li>
+                        <li>Upper level</li>
+                        <li>Quiet corner position</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bridal Veil Falls Room -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/5c285a8ec5f148219e2eaaad172b99bd-Large" alt="Bridal Veil Room">
+                </div>
+                <div class="bedroom-thumbnails">
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/3f0b6cd7801448e697161305297d307e-Medium" alt="Bridal Bath">
+                    </div>
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/df65c94512074d1d80abbbebdd7d63eb-Medium" alt="Accessible Bath">
+                    </div>
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>Bridal Veil Falls Room</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 3
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Main Level
+                    </div>
+                    <div class="meta-item">
+                        <span>♿</span> Accessible
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    Conveniently located on the main floor, this room features a queen bed, bunk bed, walk-in closet, and plush seating. The ensuite bathroom includes accessibility features with shower seat available in nearby closet.
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>Queen bed + bunk bed</li>
+                        <li>Main floor convenience</li>
+                        <li>Full bathroom ensuite</li>
+                        <li>Accessible features</li>
+                        <li>Walk-in closet</li>
+                        <li>Plush chair</li>
+                        <li>Easy access location</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- King Room -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/169837e4e5fe40988b5c8a64d1163247-Large" alt="King Room">
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>The King Room</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 4
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Lower Level
+                    </div>
+                    <div class="meta-item">
+                        <span>🌲</span> Cabin Style
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    This rustic cabin-style room features beautiful log construction, a California king bed, set of bunk beds, and twin rollaway. Perfect for families who want a cozy mountain retreat atmosphere.
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>California king bed</li>
+                        <li>Bunk beds + rollaway</li>
+                        <li>Rustic cabin decor</li>
+                        <li>Log construction</li>
+                        <li>Lower level location</li>
+                        <li>Jack & Jill bathroom access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Queen Room -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/ed16e58bfdbe462ca5e279d6e95c17de-Large" alt="Queen Room">
+                </div>
+                <div class="bedroom-thumbnails">
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/d6bc0af422224a04b507a4308c8a807d-Large" alt="Queen Closet">
+                    </div>
+                    <div class="bedroom-thumbnail">
+                        <img src="https://uc.orez.io/i/c9d0b6a4cbfa45c7ba2b4b00db04943b-Large" alt="Bathroom">
+                    </div>
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>The Queen Room</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 7
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Lower Level
+                    </div>
+                    <div class="meta-item">
+                        <span>👨‍👩‍👧‍👦</span> Family Suite
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    A spacious family suite featuring two queen log beds, bunk bed, and trundle bed with two pullouts underneath. A privacy curtain can divide the room in half. The Jack & Jill bathroom includes double vanity, showers, and jetted tub.
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>2 queen beds + bunks + trundle</li>
+                        <li>Sleeps 7 guests</li>
+                        <li>Privacy curtain divider</li>
+                        <li>Jack & Jill bathroom</li>
+                        <li>Walk-in closet</li>
+                        <li>Jetted tub</li>
+                        <li>Double vanity</li>
+                        <li>Perfect for families</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bunk House 1 -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/001367909f8a412297beff4398874b35-Large" alt="Bunk House">
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>Bunk House</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 6
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Lower Level
+                    </div>
+                    <div class="meta-item">
+                        <span>👶</span> Kid-Friendly
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    Kids and adults alike love the Bunk House! This fun room features two sets of bunk beds, a queen bed, and pullout mattress. Great for children who want to be together or adults who don't mind the bunk bed experience.
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>2 bunk beds + queen + pullout</li>
+                        <li>Sleeps 6 comfortably</li>
+                        <li>Lower level location</li>
+                        <li>Kid-friendly setup</li>
+                        <li>Shared bathroom access</li>
+                        <li>Storage space</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bunk House 2 -->
+        <div class="bedroom-suite">
+            <div class="bedroom-images">
+                <div class="main-bedroom-image">
+                    <img src="https://uc.orez.io/i/29632e092e9c40f0a1bb0bffd6bce9a5-Large" alt="Bunk House 2">
+                </div>
+            </div>
+            <div class="bedroom-details">
+                <h3>Bunk House 2</h3>
+                <div class="bedroom-meta">
+                    <div class="meta-item">
+                        <span>🛏️</span> Sleeps 3
+                    </div>
+                    <div class="meta-item">
+                        <span>📍</span> Lower Level
+                    </div>
+                    <div class="meta-item">
+                        <span>👶</span> With Crib
+                    </div>
+                </div>
+                <p class="bedroom-description">
+                    A cozy space divided by a partition and curtain for privacy. Features a full bed, pullout twin bed, and a crib for the little ones. Perfect for families with young children who want to be close together.
+                </p>
+                <div class="bedroom-features">
+                    <h4>Suite Features:</h4>
+                    <ul class="features-list">
+                        <li>Full bed + pullout twin</li>
+                        <li>Crib for infants</li>
+                        <li>Privacy partition & curtain</li>
+                        <li>Cubby storage</li>
+                        <li>Lower level</li>
+                        <li>Family-friendly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Capacity Summary -->
+        <div class="capacity-summary">
+            <h3>Total Sleeping Capacity</h3>
+            <div class="capacity-grid">
+                <div class="capacity-item">
+                    <span class="capacity-number">50</span>
+                    <p>Total Guests</p>
+                </div>
+                <div class="capacity-item">
+                    <span class="capacity-number">11</span>
+                    <p>Bedroom Suites</p>
+                </div>
+                <div class="capacity-item">
+                    <span class="capacity-number">48+</span>
+                    <p>Fixed Beds</p>
+                </div>
+                <div class="capacity-item">
+                    <span class="capacity-number">10+</span>
+                    <p>Pullout/Sofa Beds</p>
+                </div>
+            </div>
+            <p class="lead-text">All bedrooms feature premium linens, ample storage, and thoughtful design details</p>
+        </div>
+
+        <!-- Additional Bedroom Info -->
+        <div class="amenities-section">
+            <h3>What's Included in Every Bedroom</h3>
+            <div class="amenities-grid">
+                <div class="amenity-item">
+                    <div class="icon">🛏️</div>
+                    <h4>Premium Bedding</h4>
+                    <p>Quality mattresses and linens</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="icon">📺</div>
+                    <h4>Entertainment</h4>
+                    <p>TV with Roku streaming</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="icon">🚪</div>
+                    <h4>Ample Storage</h4>
+                    <p>Closets and dressers</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="icon">🌡️</div>
+                    <h4>Climate Control</h4>
+                    <p>Individual temperature control</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Ready to Book Your Suite?</h2>
+            <p>
+                Check availability and reserve your preferred bedroom configuration today
+            </p>
+            <a href="booking.html" class="cta-button white">View Availability</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

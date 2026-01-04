@@ -1,0 +1,389 @@
+<!-- cancellation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancellation Policy | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .logo img {
+            height: 50px;
+        }
+
+        .policy-container {
+            max-width: 900px;
+            padding: 8rem 2rem 6rem;
+            margin-top: 70px;
+        }
+
+        .policy-container h1 {
+            color: var(--primary);
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .policy-intro {
+            color: var(--gray);
+            margin-bottom: 3rem;
+        }
+
+        .policy-alert {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+
+        .policy-alert p {
+            color: #856404;
+            line-height: 1.8;
+        }
+
+        .policy-alert p:first-child {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section {
+            margin-bottom: 3rem;
+        }
+
+        .policy-section h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary);
+        }
+
+        .policy-item.warning {
+            border-left-color: #ffa500;
+        }
+
+        .policy-item.danger {
+            border-left-color: #dc3545;
+        }
+
+        .policy-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-item.warning h3 {
+            color: #ffa500;
+        }
+
+        .policy-item.danger h3 {
+            color: #dc3545;
+        }
+
+        .policy-item p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .exception-box {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .exception-box h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .exception-box p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .policy-section ul {
+            color: var(--gray);
+            line-height: 2;
+            margin-left: 2rem;
+        }
+
+        .insurance-box {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .insurance-box p {
+            color: #0c5460;
+            line-height: 1.8;
+        }
+
+        .insurance-box p:first-child {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .policy-cta {
+            background: var(--primary);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .policy-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .policy-cta p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .policy-cta a {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .policy-cta a:hover {
+            transform: translateY(-2px);
+        }
+
+        .policy-section p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .exception-box p {
+            margin-bottom: 0;
+        }
+
+        .insurance-box p {
+            margin-bottom: 1rem;
+        }
+
+        .insurance-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-item p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Mountain View Mansion"></a>
+            <button class="mobile-menu-toggle">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown"><a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <div class="container policy-container">
+        <h1>Cancellation Policy</h1>
+        <p class="policy-intro">Last Updated: January 2025</p>
+
+        <div class="policy-alert">
+            <p>Important: Please Read Carefully</p>
+            <p>We understand that plans can change. Please review our cancellation policy before booking. We strongly recommend purchasing travel insurance to protect your investment.</p>
+        </div>
+
+        <section class="policy-section">
+            <h2>Cancellation Timeline</h2>
+            
+            <div class="policy-item">
+                <h3>60+ Days Before Check-In</h3>
+                <p>Full refund minus $200 processing fee</p>
+            </div>
+
+            <div class="policy-item warning">
+                <h3>30-59 Days Before Check-In</h3>
+                <p>50% refund of total booking amount</p>
+            </div>
+
+            <div class="policy-item danger">
+                <h3>Less Than 30 Days Before Check-In</h3>
+                <p>No refund. Option to reschedule within 12 months subject to availability (one-time only, $200 rescheduling fee applies)</p>
+            </div>
+        </section>
+
+        <section class="policy-section">
+            <h2>Refund Process</h2>
+            <ul>
+                <li>Refunds are processed within 14 business days of cancellation</li>
+                <li>Refunds are issued to the original payment method</li>
+                <li>Processing fees are non-refundable</li>
+                <li>Bank processing times may vary (typically 5-10 business days)</li>
+            </ul>
+        </section>
+
+        <section class="policy-section">
+            <h2>Exceptions & Special Circumstances</h2>
+            
+            <div class="exception-box">
+                <h3>Weather Emergencies</h3>
+                <p>In case of severe weather warnings or natural disasters that prevent safe travel, we will work with you to reschedule or provide a full refund. Documentation from official sources may be required.</p>
+            </div>
+
+            <div class="exception-box">
+                <h3>Medical Emergencies</h3>
+                <p>Medical emergencies affecting the primary guest may qualify for special consideration. Medical documentation from a licensed physician will be required. Refund amount determined on case-by-case basis.</p>
+            </div>
+
+            <div class="exception-box">
+                <h3>Property Issues</h3>
+                <p>If Mountain View Mansion becomes unavailable due to property damage, emergency repairs, or other unforeseen circumstances, we will provide a full refund or offer comparable alternative accommodations.</p>
+            </div>
+        </section>
+
+        <section class="policy-section">
+            <h2>Modification Policy</h2>
+            <p>
+                Date changes are subject to availability and may incur additional charges if the new dates have higher rates. Contact us at least 60 days before check-in to request modifications.
+            </p>
+            <ul>
+                <li>Date changes: $200 modification fee + any rate difference</li>
+                <li>Guest count changes: Must be approved and may affect pricing</li>
+                <li>Event type changes: Subject to approval and terms</li>
+            </ul>
+        </section>
+
+        <section class="policy-section">
+            <h2>No-Show Policy</h2>
+            <p>
+                Guests who do not check in and do not cancel before check-in time will be charged the full amount of the reservation with no refund.
+            </p>
+        </section>
+
+        <section class="policy-section">
+            <h2>Travel Insurance Recommendation</h2>
+            <div class="insurance-box">
+                <p>
+                    <strong>We Strongly Recommend Travel Insurance</strong>
+                </p>
+                <p>
+                    Travel insurance can protect your investment in case of unexpected illness, family emergencies, travel delays, or other unforeseen circumstances. Most policies cost 5-7% of your trip total and provide comprehensive coverage including cancellation protection.
+                </p>
+            </div>
+        </section>
+
+        <section class="policy-section">
+            <h2>How to Cancel</h2>
+            <p>
+                To cancel your reservation, please contact us as soon as possible:
+            </p>
+            <ul>
+                <li>Phone: <a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                <li>Email: <a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                <li>Cancellations must be received in writing (email confirmation required)</li>
+            </ul>
+        </section>
+
+        <div class="policy-cta">
+            <h2>Questions About Our Cancellation Policy?</h2>
+            <p>
+                We're here to help clarify any questions you may have
+            </p>
+            <a href="contact.html">
+                Contact Us
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

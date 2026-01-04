@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Activities | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://mvmansion.com/wp-content/uploads/2024/10/justinolsen-19-JSO_1869-jpeg.webp') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .activity-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .activity-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .activity-content {
+            padding: 1.5rem;
+        }
+        
+        .activity-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .activity-content h3 a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .activity-content h3 a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Mountain View Mansion" style="height: 50px;"></a>
+            <button class="mobile-menu-toggle">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown"><a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="nearby-activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div>
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Nearby Activities</h1>
+            <p style="font-size: 1.3rem;">Adventure Awaits Year-Round</p>
+        </div>
+    </section>
+
+    <div class="container" style="padding: 6rem 2rem;">
+        <div style="text-align: center; max-width: 900px; margin: 0 auto 5rem;">
+            <h2 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 1.5rem;">Year-Round Adventures</h2>
+            <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
+                Mountain View Mansion is the perfect base for outdoor adventures and sports enthusiasts. From world-class skiing just 10 minutes away to hiking, water sports, and family attractions, there's something for every season and interest.
+            </p>
+            <p style="font-size: 1.1rem; color: var(--primary); margin-top: 1rem; font-weight: 600;">
+                For more activity ideas visit <a href="https://www.utahvalley.com/" target="_blank" style="color: var(--primary);">utahvalley.com</a>
+            </p>
+        </div>
+
+        <div style="margin-bottom: 5rem;">
+            <h2 style="text-align: center; color: var(--primary); font-size: 2.5rem; margin-bottom: 3rem;">❄️ Winter Seasonal</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/justinolsen-19-JSO_1869-jpeg.webp" alt="Skiing Sundance" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.sundanceresort.com/winter-activities/ski-snowboard/" target="_blank">Skiing Sundance</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/thumbnail_Levins090324cm67081.jpg" alt="Cross-country skiing" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://utaholympiclegacy.org/cross-country-skiing-soldier-hollow-nordic-center/" target="_blank">Cross-country ski, Soldier Hollow</a></h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Olympic venue</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/IMG_0371_Original-scaled-1.jpg" alt="Snowmobile" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.uintarecreation.com/" target="_blank">Snowmobile Rental</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/flaming-gorge_fishing_winter_flaming-gorge-chamber-of-commerce_kelly-ryan_2020.jpg" alt="Ice Fishing" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://redrockadventure.com/fish/fishing-techniques/walleye-fishing-techniques/510-ice-fishing-walleye-at-deer-creek" target="_blank">Ice Fishing, Deer Creek Reservoir</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/tubing-scaled.webp" alt="Snow Tubing" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://utaholympiclegacy.org/activity/winter-tubing/" target="_blank">Snow Tubing</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/ice-castles.jpg" alt="Ice Castles" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://icecastles.com/utah/" target="_blank">Ice Castles</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/IMG_3365.jpg" alt="Ice Skating" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.provo.org/community/peaks-ice-arena" target="_blank">Ice Skating</a></h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Olympic venue</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 5rem;">
+            <h2 style="text-align: center; color: var(--primary); font-size: 2.5rem; margin-bottom: 3rem;">🏀 Sports</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/29993854.jpeg" alt="Utah Jazz" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.nba.com/jazz/" target="_blank">Utah Jazz (Basketball)</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/jazmbuf4lggef5txcjwy.jpg" alt="Real SLC" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.rsl.com/" target="_blank">Real SLC (Soccer)</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/team-2.jpg" alt="Grizzlies" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://utahgrizzlies.com/" target="_blank">Grizzlies (Hockey)</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/byu-bkgd-noblur2-1.jpg" alt="BYU Events" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://calendar.byu.edu/events" target="_blank">BYU Events</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/imgonline-com-ua-resize-29-Pts-Vh8o-IFYv1.jpg" alt="UVU Events" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.uvu.edu/events/" target="_blank">UVU Events</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 5rem;">
+            <h2 style="text-align: center; color: var(--primary); font-size: 2.5rem; margin-bottom: 3rem;">🚵 Biking/Hiking/Walking</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/DSC1878-scaled.webp" alt="Y Trail" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.utahvalley.com/listing/y-trail/796/" target="_blank">Hike the Y</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/MountainBikingOutlawExpress1-scaled-1.jpg" alt="Downhill Biking" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.sundanceresort.com/summer-activities/mountain-bike-lift-rides/" target="_blank">Downhill Biking at Sundance</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/maxresdefault.jpg" alt="Mountain Biking" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.trailforks.com/region/provo-canyon-15644/map/" target="_blank">Mountain Biking</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/StewartFalls20-6cab27e95056a36_6cab2925-5056-a36a-0b66b05b8644194a.jpg" alt="Stewart Falls" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.utah.com/destinations/cities-towns/provo/hiking/stewart-falls/" target="_blank">Hike Stewart Falls, Timpanogos</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/11/Provo-Canyon-Trail.webp" alt="Provo Canyon Trail" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.traillink.com/trail/murdock-canal-trail/" target="_blank">Provo Canyon Trail/Murdock Canal</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/6-fifth-water-hot-springs.jpg" alt="Fifth Water Hot Springs" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.findinghotsprings.com/mag/guide-to-fifth-water-hot-springs-in-utah" target="_blank">Fifth Water Hot Springs</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 5rem;">
+            <h2 style="text-align: center; color: var(--primary); font-size: 2.5rem; margin-bottom: 3rem;">🚣 Outdoor Adventure</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/StandUp_Paddleboarding_Deer_Creek_96e76cf2-85f9-4938-9c04-eeb9cb57302c.jpg" alt="Paddleboard" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://islandrentals.deercreekislandresort.com/details/15" target="_blank">Paddleboard Deer Creek</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/GP1800-Yamaha-Rentals.jpg" alt="Jet Skiing" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.utahboatrental.com/jet-ski/" target="_blank">Jet Skiing</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/SailingIMAGE_81b8791e-8145-4b9f-a1f2-603d25c0594d.jpg" alt="Boating" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.utahboatrental.com/boats/models/" target="_blank">Boating</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/happy-rafting.jpg" alt="River Rafting" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://proraftingtours.com/outdoor-adventures/river-trips/international/united-states/utah/provo-river/" target="_blank">River Raft/Tubing</a></h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Provo River</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/64d93d666355a43c4a86679a030d35b6_XL.jpg" alt="Polar Plunge" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://hebervalleylife.com/ice-ice-baby/" target="_blank">Polar Plunge</a></h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Provo River</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Provo-River-Adventures-1-scaled-1.jpg" alt="Kayak" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.uvu.edu/oac/equipment/water.html" target="_blank">Kayak</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/bryce-canyon-horseback-riding-tour.jpg" alt="Horseback Riding" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.utahhorsebackriding.com/" target="_blank">Horseback Riding</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 5rem;">
+            <h2 style="text-align: center; color: var(--primary); font-size: 2.5rem; margin-bottom: 3rem;">🎪 General Family Fun</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Cascade_Mini_Golf_28760943118-scaled.jpg" alt="Mini Golf" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.scratchminigolf.com/" target="_blank">Mini Golf</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/maxresdefault-1.jpg" alt="Zipline" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="http://www.ziplineutah.com/" target="_blank">Zipline</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/media-image-2728190-scaled.jpg" alt="Heber Creeper" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.hebertrain.com/" target="_blank">Heber Creeper</a></h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Historic Steam Train</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/20170701_171219-EFFECTS.jpg" alt="Seven Peaks" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.splashsummit.com/" target="_blank">Seven Peaks Water Park</a></h3>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/attachment-Screen-Shot-2022-03-02-at-9.22.49-PM.jpg" alt="Lagoon" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.lagoonpark.com/" target="_blank">Lagoon Amusement Park</a></h3>
+                        <p style="color: var(--gray); font-size: 0.9rem;">Farmington</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/IMG_3365-1.jpg" alt="Ice Rink" class="activity-image">
+                    <div class="activity-content">
+                        <h3><a href="https://www.provo.org/community/peaks-ice-arena" target="_blank">Olympic Ice Skating Rink</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .booking-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://uc.orez.io/i/44a12a7a435c4ee6819bf755849097b7-Large') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .booking-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .booking-hero p {
+            font-size: 1.3rem;
+        }
+        
+        .booking-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .booking-section-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .booking-widget {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .widget-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .widget-placeholder {
+            text-align: center;
+            padding: 3rem;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+        }
+
+        .widget-placeholder h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .widget-placeholder p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .widget-placeholder .note {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .contact-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .pricing-info {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+        }
+        
+        .pricing-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .pricing-info ul {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .pricing-info li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .pricing-info li:last-child {
+            border-bottom: none;
+        }
+
+        .add-ons-section {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #ddd;
+        }
+
+        .add-ons-section h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .add-ons-section p {
+            color: #666;
+        }
+
+        .booking-policies {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            border: 2px solid var(--light);
+        }
+
+        .booking-policies h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .policies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .policy-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-item p {
+            color: #666;
+        }
+
+        .policy-item a {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Mountain View Mansion">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="booking-hero">
+        <div>
+            <h1>Book Your Stay</h1>
+            <p>Check availability and reserve your Mountain View Mansion experience</p>
+        </div>
+    </section>
+
+    <!-- Booking Content -->
+    <div class="booking-container">
+        <!-- OwnerRez Calendar Widget -->
+        <div class="booking-widget">
+            <h2 class="widget-title">Check Availability & Pricing</h2>
+            
+            <!-- 
+                OwnerRez Calendar Integration 
+                Replace this section with your actual OwnerRez embed code
+            -->
+            <div class="widget-placeholder">
+                <h3>OwnerRez Calendar Widget</h3>
+                <p>
+                    Your OwnerRez availability calendar and booking form will be embedded here.<br>
+                    Paste your OwnerRez widget code to replace this placeholder.
+                </p>
+                <p class="note">
+                    The calendar will show available dates, pricing, and allow guests to select dates and request a quote or book directly.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Options -->
+        <h2 class="booking-section-title">
+            Prefer to Book Directly?
+        </h2>
+        
+        <div class="contact-options">
+            <div class="contact-card">
+                <div class="contact-card-icon">📞</div>
+                <h3>Call Us</h3>
+                <p>Speak directly with our team</p>
+                <a href="tel:+14259416203">+1 (425) 941-6203</a>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-card-icon">📧</div>
+                <h3>Email Us</h3>
+                <p>Get a personalized quote</p>
+                <a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-card-icon">💬</div>
+                <h3>Message Us</h3>
+                <p>Quick questions? Contact form</p>
+                <a href="contact.html">Send a Message</a>
+            </div>
+        </div>
+
+        <!-- Pricing Information -->
+        <div class="pricing-info">
+            <h3>What's Included</h3>
+            <ul>
+                <li>
+                    <span>All Amenities Access</span>
+                    <span>✓ Included</span>
+                </li>
+                <li>
+                    <span>Indoor Pool & Spa</span>
+                    <span>✓ Included</span>
+                </li>
+                <li>
+                    <span>Sport Courts</span>
+                    <span>✓ Included</span>
+                </li>
+                <li>
+                    <span>Theater Room</span>
+                    <span>✓ Included</span>
+                </li>
+                <li>
+                    <span>All Bedrooms (Sleeps 50)</span>
+                    <span>✓ Included</span>
+                </li>
+                <li>
+                    <span>3 Full Kitchens</span>
+                    <span>✓ Included</span>
+                </li>
+                <li>
+                    <span>Outdoor Recreation</span>
+                    <span>✓ Included</span>
+                </li>
+                <li>
+                    <span>High-Speed WiFi</span>
+                    <span>✓ Included</span>
+                </li>
+            </ul>
+            
+            <div class="add-ons-section">
+                <h4>Optional Add-Ons Available</h4>
+                <p>Catering, massage services, yoga instruction, and more can be arranged.</p>
+                <a href="contact.html" class="text-link">Inquire About Add-Ons →</a>
+            </div>
+        </div>
+
+        <!-- Booking Policies -->
+        <div class="booking-policies">
+            <h3>Booking Policies</h3>
+            <div class="policies-grid">
+                <div class="policy-item">
+                    <h4>Minimum Stay</h4>
+                    <p>Varies by season. Typically 2-3 nights.</p>
+                </div>
+                <div class="policy-item">
+                    <h4>Cancellation</h4>
+                    <p>See our <a href="cancellation.html">cancellation policy</a></p>
+                </div>
+                <div class="policy-item">
+                    <h4>Check-in/out</h4>
+                    <p>Check-in: 4:00 PM | Check-out: 11:00 AM</p>
+                </div>
+                <div class="policy-item">
+                    <h4>Guest Capacity</h4>
+                    <p>Maximum 50 guests overnight</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

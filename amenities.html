@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://uc.orez.io/i/44a12a7a435c4ee6819bf755849097b7-Large') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .amenities-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .amenity-section {
+            margin-bottom: 6rem;
+        }
+        
+        .amenity-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        
+        .amenity-feature:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .amenity-feature:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .amenity-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        
+        .amenity-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .amenity-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .amenity-content h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .amenity-content p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .feature-list li {
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 10px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .feature-list li:before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .amenity-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .amenity-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .amenity-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .amenity-card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .amenity-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .amenity-feature {
+                grid-template-columns: 1fr;
+            }
+            
+            .amenity-feature:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+        }
+
+        .additional-section {
+            background: var(--light);
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 4rem;
+        }
+
+        .additional-section h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .concierge-section {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .concierge-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .concierge-section > p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            opacity: 0.9;
+        }
+
+        .concierge-cta {
+            margin-top: 2rem !important;
+            background: white !important;
+            color: var(--primary) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Mountain View Mansion">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div>
+            <h1>World-Class Amenities</h1>
+            <p>Everything you need for an unforgettable stay</p>
+        </div>
+    </section>
+
+    <!-- Amenities Content -->
+    <div class="amenities-container">
+        <!-- Indoor Pool -->
+        <div class="amenity-section">
+            <div class="amenity-feature">
+                <div class="amenity-image">
+                    <img src="https://uc.orez.io/i/0f631814885e4dd4ba942bdab51bd29e-Large" alt="Indoor Pool">
+                </div>
+                <div class="amenity-content">
+                    <h2>Indoor Pool Complex</h2>
+                    <p>
+                        Our stunning year-round heated indoor pool is the crown jewel of Mountain View Mansion. Surrounded by floor-to-ceiling glass walls, the pool area offers breathtaking panoramic mountain views while you swim, creating a truly unique experience in any season.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Heated Indoor Pool</li>
+                        <li>Water Slide</li>
+                        <li>Diving Board</li>
+                        <li>Basketball Hoop</li>
+                        <li>Large Spa/Jacuzzi</li>
+                        <li>Glass Sliding Doors & Clear Roof</li>
+                        <li>Pool House Kitchen</li>
+                        <li>Changing Rooms</li>
+                        <li>Sauna</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sport Courts -->
+        <div class="amenity-section">
+            <div class="amenity-feature">
+                <div class="amenity-image">
+                    <img src="https://uc.orez.io/i/ee791d6835434a96b11cf57fba0d89b2-Large" alt="Indoor Sport Court">
+                </div>
+                <div class="amenity-content">
+                    <h2>Indoor Sport Court</h2>
+                    <p>
+                        Stay active year-round in our indoor sport court. Whether it's a friendly game of basketball, an intense volleyball match, or badminton with the family, our indoor court provides endless entertainment for all ages and skill levels.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Basketball Court</li>
+                        <li>Volleyball Net</li>
+                        <li>Badminton Setup</li>
+                        <li>Pickleball Equipment</li>
+                        <li>Shuffleboard</li>
+                        <li>Foosball Table</li>
+                        <li>Yoga Mats</li>
+                        <li>Ballet Bar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="amenity-feature">
+                <div class="amenity-image">
+                    <img src="https://uc.orez.io/i/bbac8490af6f46d7adcb7c5eb205272e-Large" alt="Outdoor Sport Court">
+                </div>
+                <div class="amenity-content">
+                    <h2>Outdoor Sport Court</h2>
+                    <p>
+                        Take your game outdoors on our fenced sport court. With mountain views as your backdrop, enjoy tennis, pickleball, basketball, or volleyball. The court includes a drinking fountain and is perfect for tournaments or casual play.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Tennis Court</li>
+                        <li>Basketball Court</li>
+                        <li>Pickleball Lines</li>
+                        <li>Volleyball Net</li>
+                        <li>Equipment Available</li>
+                        <li>Drinking Fountains</li>
+                        <li>Mountain Views</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Entertainment -->
+        <div class="amenity-section">
+            <div class="amenity-feature">
+                <div class="amenity-image">
+                    <img src="https://uc.orez.io/i/03f707b8743d490bb7138c0abe070b3f-Large" alt="Theater Room">
+                </div>
+                <div class="amenity-content">
+                    <h2>Theater & Presentation Room</h2>
+                    <p>
+                        Our professional theater room features a retractable projection screen, blackout curtains, and comfortable seating for movie nights, presentations, or special events. The room includes a pool table and multiple seating areas for versatile entertainment.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Retractable Screen</li>
+                        <li>4K Projector</li>
+                        <li>Blackout Curtains</li>
+                        <li>Surround Sound</li>
+                        <li>Billiards Table</li>
+                        <li>Multiple Seating Areas</li>
+                        <li>Gas Fireplace</li>
+                        <li>Roku Streaming</li>
+                        <li>Xbox Gaming</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="amenity-feature">
+                <div class="amenity-image">
+                    <img src="https://uc.orez.io/i/db84b1c108fb4338800f5d8bd88fca47-Large" alt="Baby Grand Piano">
+                </div>
+                <div class="amenity-content">
+                    <h2>Formal Living & Music Room</h2>
+                    <p>
+                        The elegant formal living room features a baby grand piano, soaring 20-foot ceilings, and luxurious seating arrangements. Perfect for intimate concerts, cocktail hours, or quiet reading time away from the group.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Baby Grand Piano</li>
+                        <li>Keyboard (Lower Level)</li>
+                        <li>20-Foot Ceilings</li>
+                        <li>Multiple Seating Areas</li>
+                        <li>Gas Fireplace</li>
+                        <li>Large Windows</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kitchens & Dining -->
+        <div class="amenity-section">
+            <div class="amenity-feature">
+                <div class="amenity-image">
+                    <img src="https://uc.orez.io/i/508a5562653e4b70be1671fa938287af-Large" alt="Main Kitchen">
+                </div>
+                <div class="amenity-content">
+                    <h2>Three Kitchens</h2>
+                    <p>
+                        Designed to serve large groups effortlessly, our three fully-equipped kitchens span multiple levels. The main kitchen features top-of-the-line Sub-Zero appliances, multiple cooking stations, and seating for 8 at the island.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Sub-Zero Refrigerators</li>
+                        <li>8-Burner Gas Ranges</li>
+                        <li>Dual Ovens (Multiple)</li>
+                        <li>4 Dishwashers</li>
+                        <li>Multiple Sinks</li>
+                        <li>Reverse Osmosis Water</li>
+                        <li>2 Microwaves per Kitchen</li>
+                        <li>Ice Maker</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="amenity-feature">
+                <div class="amenity-image">
+                    <img src="https://uc.orez.io/i/fc10aaf73f9b45479b45566e618f08ac-Large" alt="Formal Dining">
+                </div>
+                <div class="amenity-content">
+                    <h2>Multiple Dining Spaces</h2>
+                    <p>
+                        With capacity to seat 50+ guests comfortably across multiple dining areas, Mountain View Mansion is perfect for banquets, family dinners, and corporate meals. The formal dining room features a cherry wood table, while additional tables and chairs are available throughout.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Formal Dining Room (14+)</li>
+                        <li>Breakfast Nook (10)</li>
+                        <li>Kitchen Island Seating (8)</li>
+                        <li>Pool House Dining</li>
+                        <li>Lower Level Dining (30+)</li>
+                        <li>Additional Tables Available</li>
+                        <li>Outdoor Dining Options</li>
+                        <li>Mountain View Seating</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Outdoor Recreation -->
+        <div class="amenity-section">
+            <div class="amenity-feature">
+                <div class="amenity-image">
+                    <img src="https://uc.orez.io/i/5c12db9552ce4509acc0f979f031768d-Large" alt="Playground">
+                </div>
+                <div class="amenity-content">
+                    <h2>Children's Paradise</h2>
+                    <p>
+                        Kids will love our park-quality playground complete with rubberized safety surface, swing set, in-ground trampoline, and elaborate play structures. There's also a charming playhouse inside the mansion for the little ones.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Large Play Structure</li>
+                        <li>3 Slides</li>
+                        <li>Monkey Bars</li>
+                        <li>Triple Swing Set</li>
+                        <li>In-Ground Trampoline</li>
+                        <li>Rubberized Surface</li>
+                        <li>Indoor Playhouse</li>
+                        <li>Toddler Bikes Available</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="amenity-feature">
+                <div class="amenity-image">
+                    <img src="https://uc.orez.io/i/5ab5b723a95f428dab9446dd23dee789-Large" alt="Backyard">
+                </div>
+                <div class="amenity-content">
+                    <h2>Expansive Outdoor Grounds</h2>
+                    <p>
+                        Our 1.7 private acres offer endless outdoor possibilities. From the covered gazebo to multiple deck levels, fire pit, and seasonal creek, you'll find the perfect spot for any activity or quiet contemplation.
+                    </p>
+                    <ul class="feature-list">
+                        <li>1.7 Private Acres</li>
+                        <li>Covered Gazebo</li>
+                        <li>Multiple Deck Levels</li>
+                        <li>Fire Pit</li>
+                        <li>Outdoor Grills (3)</li>
+                        <li>Seasonal Canal</li>
+                        <li>Mature Landscaping</li>
+                        <li>Mountain Views</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Amenities -->
+        <div class="additional-section">
+            <h2>Additional Amenities</h2>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">🧖</div>
+                    <h3>Large Sauna</h3>
+                    <p>Accommodates 15 people, infrared heat</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🎮</div>
+                    <h3>Game Room</h3>
+                    <p>Foosball, arcade games, board games</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">📶</div>
+                    <h3>High-Speed WiFi</h3>
+                    <p>Throughout entire property</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">📺</div>
+                    <h3>Multiple TVs</h3>
+                    <p>Roku streaming in every ensuite bedroom</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🧺</div>
+                    <h3>Three Laundry Rooms</h3>
+                    <p>4 washers, 4 dryers</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">♿</div>
+                    <h3>Elevator</h3>
+                    <p>Full access to all levels</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🅿️</div>
+                    <h3>Parking</h3>
+                    <p>Spaces for 13+ vehicles</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🔒</div>
+                    <h3>Security</h3>
+                    <p>Gated property, coded entry</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">❄️</div>
+                    <h3>Climate Control</h3>
+                    <p>Multi-zone heating/cooling</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🥤</div>
+                    <h3>Soda Fountain</h3>
+                    <p>Complimentary soft drinks</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">☕</div>
+                    <h3>Coffee Stations</h3>
+                    <p>Multiple throughout mansion</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🎯</div>
+                    <h3>Lawn Games</h3>
+                    <p>9-square, ladder ball, more</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional Add-Ons -->
+        <div class="concierge-section">
+            <h2>Optional Concierge Services</h2>
+            <p>
+                Enhance your stay with our premium add-on services. Schedule in advance for a truly customized experience.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🍽️</div>
+                    <h3>Catering</h3>
+                    <p>Professional meal service for groups</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💆</div>
+                    <h3>Massage Services</h3>
+                    <p>Licensed massage therapist available</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧘</div>
+                    <h3>Yoga Instruction</h3>
+                    <p>Professional yoga classes on-site</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎮</div>
+                    <h3>AI Escape Room</h3>
+                    <p>Interactive escape room experience</p>
+                </div>
+            </div>
+            <a href="contact.html" class="cta-button concierge-cta">
+                Inquire About Add-Ons
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

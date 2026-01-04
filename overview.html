@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansion Overview | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://uc.orez.io/i/570df2ed31ac4a2daa837bc253a36800-Large') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .overview-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .intro-section {
+            margin-bottom: 4rem;
+        }
+        
+        .feature-sections {
+            display: grid;
+            gap: 4rem;
+        }
+        
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .feature-row:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .feature-row:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .feature-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        
+        .feature-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .feature-text h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-text p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+        }
+        
+        .feature-list li:before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .highlight-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .highlight-card h4 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin: 1rem 0;
+        }
+        
+        .highlight-icon {
+            font-size: 3rem;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+        }
+
+        .accessibility-section {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 4rem 0;
+        }
+
+        .accessibility-section h3 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .accessibility-section > p {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .accessibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .accessibility-item {
+            text-align: center;
+        }
+
+        .accessibility-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .accessibility-item h4 {
+            color: var(--dark);
+        }
+
+        .accessibility-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .cta-primary {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 15px;
+        }
+
+        .cta-primary h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-primary p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-primary .cta-button {
+            background: white;
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .feature-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-row:nth-child(even) {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Mountain View Mansion">
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="activities.html">Nearby Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div>
+            <h1>Mansion Overview</h1>
+            <p>Utah's Premier 20,000 Square Foot Vacation Estate</p>
+        </div>
+    </section>
+
+    <!-- Overview Content -->
+    <div class="overview-content">
+        <!-- Introduction -->
+        <div class="intro-section section-intro">
+            <h2>Welcome to Mountain View Mansion</h2>
+            <p>
+                Mountain View Mansion is Utah's premier luxury vacation rental, offering an unprecedented 20,000 square feet of elegantly appointed living space on 1.7 private acres. Nestled at the mouth of scenic Provo Canyon with breathtaking views of Mount Timpanogos, our estate provides the perfect setting for unforgettable family reunions, corporate retreats, weddings, and special celebrations.
+            </p>
+            <p>
+                With accommodations for up to 50 guests across 11 uniquely themed bedroom suites, three fully-equipped commercial kitchens, and world-class amenities including an indoor pool, multiple sport courts, and a professional theater room, Mountain View Mansion delivers an unparalleled hospitality experience.
+            </p>
+        </div>
+
+        <!-- Key Highlights -->
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-icon">🏠</div>
+                <h4>20,000 Sq Ft</h4>
+                <p>Five levels of luxury living space</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🛏️</div>
+                <h4>11 Bedrooms</h4>
+                <p>Uniquely themed suites</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🚿</div>
+                <h4>13 Bathrooms</h4>
+                <p>10 full, 3 half baths</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">👥</div>
+                <h4>Sleeps 50</h4>
+                <p>Perfect for large groups</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🌲</div>
+                <h4>1.7 Acres</h4>
+                <p>Private gated property</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">⛰️</div>
+                <h4>Mountain Views</h4>
+                <p>Stunning Timpanogos vistas</p>
+            </div>
+        </div>
+
+        <!-- Feature Sections -->
+        <div class="feature-sections">
+            <!-- Indoor Pool -->
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="https://uc.orez.io/i/44a12a7a435c4ee6819bf755849097b7-Large" alt="Indoor Pool">
+                </div>
+                <div class="feature-text">
+                    <h3>Year-Round Indoor Pool Complex</h3>
+                    <p>
+                        Our spectacular indoor pool facility features floor-to-ceiling glass walls that frame panoramic mountain views, creating an immersive connection with the stunning Utah landscape. The heated pool is perfect for all seasons and includes:
+                    </p>
+                    <ul class="feature-list">
+                        <li>20-foot water slide</li>
+                        <li>Diving board</li>
+                        <li>Large spa/jacuzzi with jets</li>
+                        <li>Basketball hoop for pool games</li>
+                        <li>Polycarbonate clear roof for natural light</li>
+                        <li>Full kitchen and dining area adjacent</li>
+                        <li>Men's and women's changing rooms with showers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Living Spaces -->
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="https://uc.orez.io/i/f9f64d512c6f4a8a8bc178952d5c4f71-Large" alt="Great Room">
+                </div>
+                <div class="feature-text">
+                    <h3>Spectacular Common Areas</h3>
+                    <p>
+                        The mansion features multiple gathering spaces designed to accommodate large groups while maintaining an intimate, welcoming atmosphere. The three-story vaulted Great Room serves as the heart of the home with:
+                    </p>
+                    <ul class="feature-list">
+                        <li>Soaring wooden beam ceilings reaching three stories high</li>
+                        <li>Grand stone fireplace</li>
+                        <li>Large screen TV with entertainment system</li>
+                        <li>Baby grand piano in formal living room</li>
+                        <li>Professional theater room with retractable screen</li>
+                        <li>Billiards room with multiple seating areas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Kitchens -->
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="https://uc.orez.io/i/508a5562653e4b70be1671fa938287af-Large" alt="Main Kitchen">
+                </div>
+                <div class="feature-text">
+                    <h3>Three Professional Kitchens</h3>
+                    <p>
+                        Designed to serve large groups with ease, our commercial-grade kitchens are located on multiple levels for maximum convenience. The main kitchen features:
+                    </p>
+                    <ul class="feature-list">
+                        <li>Sub-Zero refrigerator/freezer</li>
+                        <li>8-burner commercial range with dual ovens</li>
+                        <li>Large island with seating for 8</li>
+                        <li>Multiple sinks and dishwashers</li>
+                        <li>Reverse osmosis water system</li>
+                        <li>Formal dining room seating 14+</li>
+                        <li>Breakfast nook with mountain views</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sport Facilities -->
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="https://uc.orez.io/i/ee791d6835434a96b11cf57fba0d89b2-Large" alt="Indoor Sport Court">
+                </div>
+                <div class="feature-text">
+                    <h3>Indoor & Outdoor Recreation</h3>
+                    <p>
+                        Stay active with our extensive sport facilities, perfect for all ages and skill levels:
+                    </p>
+                    <ul class="feature-list">
+                        <li>Full indoor basketball/volleyball court</li>
+                        <li>Outdoor tennis/pickleball/basketball court</li>
+                        <li>Regulation shuffleboard</li>
+                        <li>Foosball table</li>
+                        <li>Pool table that converts to ping pong</li>
+                        <li>Yoga mats and ballet bar</li>
+                        <li>Large sauna accommodating 15 people</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Outdoor Amenities -->
+            <div class="feature-row">
+                <div class="feature-image">
+                    <img src="https://uc.orez.io/i/5ab5b723a95f428dab9446dd23dee789-Large" alt="Backyard">
+                </div>
+                <div class="feature-text">
+                    <h3>Expansive Outdoor Grounds</h3>
+                    <p>
+                        The 1.7-acre gated property offers extensive outdoor recreation and relaxation areas:
+                    </p>
+                    <ul class="feature-list">
+                        <li>Large playground with rubberized surface</li>
+                        <li>In-ground trampoline</li>
+                        <li>Multiple swing sets</li>
+                        <li>Covered gazebo with seating</li>
+                        <li>Multiple deck levels with mountain views</li>
+                        <li>Fire pit and outdoor grills</li>
+                        <li>Seasonal creek and mature landscaping</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accessibility Features -->
+        <div class="accessibility-section">
+            <h3>Accessibility Features</h3>
+            <p>
+                Mountain View Mansion is designed to welcome all guests with thoughtful accessibility features:
+            </p>
+            <div class="accessibility-grid">
+                <div class="accessibility-item">
+                    <div class="accessibility-icon">♿</div>
+                    <h4>Elevator Access</h4>
+                    <p>Full elevator serving all levels</p>
+                </div>
+                <div class="accessibility-item">
+                    <div class="accessibility-icon">🚪</div>
+                    <h4>Ramp Entry</h4>
+                    <p>Step-free entrance available</p>
+                </div>
+                <div class="accessibility-item">
+                    <div class="accessibility-icon">🚿</div>
+                    <h4>Accessible Bathrooms</h4>
+                    <p>Grab bars and roll-in showers</p>
+                </div>
+                <div class="accessibility-item">
+                    <div class="accessibility-icon">🅿️</div>
+                    <h4>Ample Parking</h4>
+                    <p>Spaces for 13+ vehicles</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-primary">
+            <h2>Ready to Experience Mountain View Mansion?</h2>
+            <p>
+                Book your stay today and create unforgettable memories in Utah's premier vacation estate
+            </p>
+            <a href="booking.html" class="cta-button">Check Availability</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                        <li><a href="concierge.html">Concierge Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

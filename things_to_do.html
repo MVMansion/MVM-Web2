@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amenities | Mountain View Mansion</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://mvmansion.com/wp-content/uploads/2023/10/DSC04919-scaled.jpg') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .category-section {
+            margin-bottom: 5rem;
+        }
+        
+        .category-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .amenity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .amenity-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .amenity-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .amenity-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .amenity-content {
+            padding: 1.5rem;
+        }
+        
+        .amenity-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .amenity-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Mountain View Mansion" style="height: 50px;"></a>
+            <button class="mobile-menu-toggle">☰</button>
+            <ul class="nav-links">
+                <li class="dropdown"><a href="#">Mansion Info ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location & Directions</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Events ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                    </ul>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="nearby-activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="booking.html" class="book-btn">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div>
+            <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">Amenities</h1>
+            <p style="font-size: 1.3rem;">Everything You Need for an Unforgettable Stay</p>
+        </div>
+    </section>
+
+    <div class="container" style="padding: 6rem 2rem;">
+        <div style="text-align: center; max-width: 900px; margin: 0 auto 5rem;">
+            <h2 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 1.5rem;">World-Class Amenities</h2>
+            <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
+                Mountain View Mansion is perfectly located near a variety of exciting points of interest and activities. However there are many things to do while staying at the Mountain View Mansion. Outdoors we have a park-level play set with 3 slides, monkey bars and more, an in-ground trampoline, and swing set. A Basketball court, and pickleball/tennis court with lights for evening playing. Ladder ball, 9-square, and spikeball are fun for everyone.
+            </p>
+        </div>
+
+        <div class="category-section" id="Outdoorfun">
+            <h2 class="category-title">🏃 Outdoor Fun</h2>
+            <div class="amenity-grid">
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/10/DSC04919-scaled.jpg" alt="Basketball hoops/pickleball courts/tennis court" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Basketball hoops/pickleball courts/tennis court</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/20210505_171834_HDR-scaled.jpg" alt="Huge Park-sized play set" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Huge Park-sized play set</h3>
+                        <p>3 slides, monkey bars, etc.</p>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/after-tramp-Copy-rotated.jpg" alt="In-ground trampoline" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>In-ground trampoline</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/20210505_171627_HDR-scaled-1.jpg" alt="Swing set" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Swing set</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/resize.web_.sp_.spikeball.ET_.jpg" alt="Spike ball set" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Spike ball set</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/11/9Square-scaled.jpg" alt="9 square" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>9 square</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/utah-LG_FRONT__07353.jpg" alt="Ladder ball" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Ladder ball</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Food">
+            <h2 class="category-title">🍳 Cooking</h2>
+            <div style="max-width: 900px; margin: 0 auto 3rem; text-align: center;">
+                <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
+                    At Mountain View Mansion, we provide a variety of in-house services to elevate your dining and entertaining experiences. Enjoy a barbecue with our outdoor grill or relax by the fire pit for an evening under the stars. The mansion features three kitchens, two of which are fully stocked with everything you need for meal prep, and four cooktops, including two gas stoves, offering plenty of space for cooking delicious meals. Whether it's a casual cookout or a gourmet feast, our facilities ensure you have all the essentials for a memorable stay.
+                </p>
+            </div>
+            <div class="amenity-grid">
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/free-photo-of-close-up-of-a-person-turning-the-meat-on-a-grill-grid.jpeg" alt="2 Barbeque Grills" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>2 Barbeque Grills</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/blackstone-griddle.jpg" alt="Grill" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Blackstone Griddle</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/10/3R0A3497-scaled.jpg" alt="4 cooktops 2 gas" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>4 cooktops, 2 gas</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/20210505_182028-scaled.jpg" alt="3 kitchens 2 fully stocked" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>3 kitchens, 2 fully stocked</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/fire-pit-1.jpg" alt="Fire pit" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Fire pit</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Indoorfun">
+            <h2 class="category-title">🏊 Indoor Fun</h2>
+            <div style="max-width: 900px; margin: 0 auto 3rem; text-align: center;">
+                <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
+                    Mountain View Mansion offers a wide range of indoor activities to keep everyone entertained. Challenge friends with basketball hoops, a pickleball court, foosball, and even a basketball arcade game. For relaxation, enjoy yoga with mats and a dance bar with mirrors, or take a dip in the jacuzzi, sauna, and water basketball setup. The mansion also features a slide, a diving board for pool fun, and a billiards table. For movie nights, unwind in the theater room with Roku, Xbox One, and HDMI hookup for all your entertainment needs.
+                </p>
+            </div>
+            <div class="amenity-grid">
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/10/3R0A3519-scaled.jpg" alt="Basketball hoops" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Basketball hoops</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/pickleball-1.jpg" alt="Pickleball court" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Pickleball court</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/original_Web-Image_0018_iStock-669600420_super.jpg" alt="Yoga mats/dance bar and mirrors" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Yoga mats/dance bar and mirrors</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/20210505_164129-scaled.jpg" alt="Foosball" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Foosball</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/20210505_164210-scaled.jpg" alt="Basketball arcade game" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Basketball arcade game</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/10/Pool-Slide.jpg" alt="Slide" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Pool slide</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="https://mvmansion.com/wp-content/uploads/2024/07/Pool-Basketball-Pass-Oop.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="amenity-content">
+                        <h3>Water Basketball</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/10/3R0A3581-1-scaled.jpg" alt="Diving board" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Diving board</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/10/3R0A3550-scaled.jpg" alt="Jacuzzi/Hottub" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Jacuzzi/Hot tub</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/10/3R0A3530-scaled.jpg" alt="Sauna" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Sauna</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/10/3R0A3501-scaled.jpg" alt="Billiards table" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Billiards table</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/10/3R0A3511-scaled.jpg" alt="Theater room" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Theater room</h3>
+                        <p>Roku, Xbox One, HDMI hookup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Bonus">
+            <h2 class="category-title">🎮 Bonus</h2>
+            <div style="max-width: 900px; margin: 0 auto 3rem; text-align: center;">
+                <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
+                    As a bonus, Mountain View Mansion is packed with extra fun for all ages! Enjoy classic arcade games like Pac-Man and 60 other favorites, plus a Wii and Roku in the game room. There's also a poker table, a kids' toy area, and a game cabinet filled with entertainment options. For little ones, there's a charming kids' playhouse, and the mansion's hidden mini-rooms are perfect for epic hide-and-seek adventures!
+                </p>
+            </div>
+            <div class="amenity-grid">
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/arcade1up-pacman-legacy-arcade-deluxe-edition-1.webp" alt="Arcade games" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Arcade games</h3>
+                        <p>Pacman + 60 more arcade games</p>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/20210505_162256-scaled.jpg" alt="Wii and Roku in game room" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Wii and Roku in game room</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/poker-game-table.webp" alt="Poker table" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Poker table in game room</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/20210505_161917-scaled.jpg" alt="Kids toy area" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Kids toy area</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/81udmvpmzl-ac-sl1500-1626206618793.jpg" alt="Game cabinet" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Game cabinet</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/20210505_181202-scaled.jpg" alt="Kids playhouse" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Kids playhouse</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/20210506_083221-scaled.jpg" alt="Hide-and-seek" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Hide-and-seek</h3>
+                        <p>LOTS of hidden mini-rooms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Amenities">
+            <h2 class="category-title">🏡 Other Features</h2>
+            <div style="max-width: 900px; margin: 0 auto 3rem; text-align: center;">
+                <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
+                    Mountain View Mansion offers a fully fenced property with multiple outdoor spaces to relax and enjoy. The main deck, located outside the kitchen, is perfect for gatherings, while the Paris Master room has its own private deck. A lower deck overlooks the canal, leading to a cozy patio. The grounds feature fruit trees (seasonal), and for added fun, scooters and bicycles are available for kids. You can also enjoy paddleboarding, or take a short walk to nearby Palisade Park and the mini-golf course.
+                </p>
+            </div>
+            <div class="amenity-grid">
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Front-Gate.jpg" alt="Fully Fenced property" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Fully Fenced property</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/06/DSC04921-RentalMax-scaled.jpg" alt="Main deck" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Main deck outside main kitchen</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/06/Paris-Deck-North-2-RentalMax-scaled.jpg" alt="Private deck" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Private deck for the Paris Master room</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/06/DSC04924-RentalMax-scaled.jpg" alt="Lower deck" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Lower deck overlooking the canal</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Downstairs-Patio.jpg" alt="Lower Patio" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Lower Patio</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Healthy-Fruit-Trees-in-Utah.jpg" alt="Fruit Trees" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Fruit Trees</h3>
+                        <p>Seasonal</p>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/razor-turbo-a-black-label-electric-scooter-kid-riging-02-1024x597-1.jpg" alt="Scooters" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Scooters for kids use</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2023/12/Attach0-2-1.jpg" alt="Bicycles" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Bicycles</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/StandUp_Paddleboarding_Deer_Creek_96e76cf2-85f9-4938-9c04-eeb9cb57302c.jpg" alt="Paddleboards" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Paddleboards</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Cascade_Mini_Golf_28760943118-scaled.jpg" alt="Walking distance to Palisade Park" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Walking distance to Palisade Park and Mini-golf</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section" id="Premium">
+            <h2 class="category-title">✨ Premium Add-ons</h2>
+            <div style="max-width: 900px; margin: 0 auto 3rem; text-align: center;">
+                <p style="font-size: 1.1rem; color: var(--gray); line-height: 1.8;">
+                    Mountain View Mansion offers exclusive premium add-ons to elevate your stay. Enjoy a brand-new AI Escape Room experience for interactive fun. Relax with an in-house massage session on a biomat, or book a professional masseuse or yoga instructor for personalized wellness. Babysitting services are available, and for a truly luxurious touch, indulge in in-house catering or a personal chef to prepare gourmet meals during your visit.
+                </p>
+            </div>
+            <div class="amenity-grid">
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Screenshot-2024-10-05-135925.png" alt="Brand New AI Escape Room" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Brand New AI Escape Room</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/BioMatProfessional7000MXInfraredMat5_1440x960.webp" alt="In house massage" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>In house massage table, biomat and Masseuse</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/Yoga_Teachers_1-d1d87ff4bd8006724c1db39709a69794.webp" alt="Yoga instructor" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Yoga instructor</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/191007-Babysitters-min-scaled.jpg" alt="Babysitter" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>Babysitter</h3>
+                    </div>
+                </div>
+                <div class="amenity-card">
+                    <img src="https://mvmansion.com/wp-content/uploads/2024/10/What-to-Consider-When-Hiring-a-Personal-Chef-for-Your-Family-1.jpg" alt="In house catering" class="amenity-image">
+                    <div class="amenity-content">
+                        <h3>In house catering and personal Chef</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Mansion Info</h4>
+                    <ul>
+                        <li><a href="overview.html">Mansion Overview</a></li>
+                        <li><a href="bedrooms.html">Bedrooms</a></li>
+                        <li><a href="amenities.html">Amenities</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="floorplans.html">Floor Plans</a></li>
+                        <li><a href="location.html">Location</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="reunions.html">Family Reunions</a></li>
+                        <li><a href="retreats.html">Corporate Retreats</a></li>
+                        <li><a href="weddings.html">Weddings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+14259416203">+1 (425) 941-6203</a></li>
+                        <li><a href="mailto:stay@mvmansion.com">stay@mvmansion.com</a></li>
+                        <li>Orem, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mountain View Mansion. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="cancellation.html">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
