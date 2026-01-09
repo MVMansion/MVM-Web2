@@ -55,28 +55,6 @@
             margin-bottom: 2rem;
         }
 
-        .widget-placeholder {
-            text-align: center;
-            padding: 3rem;
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-        }
-
-        .widget-placeholder h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .widget-placeholder p {
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        .widget-placeholder .note {
-            font-size: 0.9rem;
-            color: #999;
-        }
-        
         .contact-options {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -184,6 +162,33 @@
         .policy-item a {
             color: var(--primary);
         }
+
+        .ownerrez-widget {
+            min-height: 500px;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-widget {
+            border: 2px solid rgb(204, 204, 204); 
+            border-radius: 4px; 
+            padding: 15px; 
+            position: relative; 
+            left: 0px; 
+            margin-bottom: 2rem;
+        }
+
+        .ownerrez-widget-iframe {
+            height: 1000px;
+            min-height: 600 px;
+            overflow: visible;
+        }
+
+        /*.booking-widget {
+            max-height: 650px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }*/
+     
     </style>
 </head>
 <body>
@@ -234,28 +239,26 @@
     <!-- Booking Content -->
     <div class="booking-container">
         <!-- OwnerRez Calendar Widget -->
-        <div class="booking-widget">
-            <h2 class="widget-title">Check Availability & Pricing</h2>
-            
-            <!-- 
-                OwnerRez Calendar Integration 
-                Replace this section with your actual OwnerRez embed code
-            -->
-            <div class="widget-placeholder">
-                <h3>OwnerRez Calendar Widget</h3>
-                <p>
-                    Your OwnerRez availability calendar and booking form will be embedded here.<br>
-                    Paste your OwnerRez widget code to replace this placeholder.
-                </p>
-                <p class="note">
-                    The calendar will show available dates, pricing, and allow guests to select dates and request a quote or book directly.
-                </p>
-            </div>
+        <h2 class="widget-title">Check Availability & Pricing</h2>
+
+        <!-- Availability Calendar web2 -->
+        <!-- OwnerRez Multiple Month Calendar widget for Mountain View Mansion -->
+        <div class="calendar-widget">
+            <div class="ownerrez-widget" data-propertyId="33967ccf73584514a79179f842220c9d" data-widget-type="Availability Calendar web2 - Multiple Month Calendar" data-widgetId="735f615da3404b97b548a64c5cf88963"></div>
         </div>
+        <h2 class="widget-title">Check Pricing for your Trip</h2>
+        <h3 class="widget-title">Inquire or Online Book</h3>
+
+        <!-- Inquiry/Book Web2 -->
+        <!-- OwnerRez Booking/Inquiry widget for Mountain View Mansion -->
+        <div class="booking-widget">
+            <div class="ownerrez-widget" data-propertyId="33967ccf73584514a79179f842220c9d" data-widget-type="Inquiry/Book Web2 - Booking/Inquiry" data-widgetId="e9ce2a4ed9014be68f3c9113d6b2d83a"></div>
+        </div>
+        <script src="https://app.ownerrez.com/widget.js"></script>            
 
         <!-- Contact Options -->
         <h2 class="booking-section-title">
-            Prefer to Book Directly?
+            Prefer to Book with a Person?
         </h2>
         
         <div class="contact-options">
@@ -306,7 +309,7 @@
                     <span>✓ Included</span>
                 </li>
                 <li>
-                    <span>3 Full Kitchens</span>
+                    <span>3 Kitchens</span>
                     <span>✓ Included</span>
                 </li>
                 <li>
@@ -322,7 +325,7 @@
             <div class="add-ons-section">
                 <h4>Optional Add-Ons Available</h4>
                 <p>Catering, massage services, yoga instruction, and more can be arranged.</p>
-                <a href="contact.html" class="text-link">Inquire About Add-Ons →</a>
+                <a href="concierge.html" class="text-link">Inquire About Add-Ons →</a>
             </div>
         </div>
 
@@ -340,7 +343,7 @@
                 </div>
                 <div class="policy-item">
                     <h4>Check-in/out</h4>
-                    <p>Check-in: 4:00 PM | Check-out: 11:00 AM</p>
+                    <p>Check-in: 5:00 PM | Check-out: 10:00 AM</p>
                 </div>
                 <div class="policy-item">
                     <h4>Guest Capacity</h4>

@@ -122,16 +122,21 @@
             padding: 2.5rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            min-height: 800px;
-            max-height: 200vw;
+            /*height:800vw;
+            /*min-height: 800px;
+            /*max-height: 200vw;*/
             width: 100%;
             margin-bottom: 2rem;
         }
         .ownerrez-widget-iframe {
-            min-height: 800px;
-            max-height: 200vw;
-            overflow:scroll
+            height: 2400px;
+            overflow: visible;
         }
+        .widget-scroll-container {
+            max-height: 1200px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }        
     </style>
 </head>
 <body>
@@ -190,8 +195,9 @@
             </div>
         </div>
         <!-- Reviews Web2 -->
-        <!-- OwnerRez Reviews widget for Mountain View Mansion -->
-        <div class="ownerrez-widget" data-propertyId="33967ccf73584514a79179f842220c9d" data-widget-type="Reviews Web2 - Reviews" data-widgetId="41a9c10d7cb64ad69d376923095ae64d"></div>
+        <div class="widget-scroll-container">
+            <div class="ownerrez-widget" data-propertyId="33967ccf73584514a79179f842220c9d" data-widget-type="Reviews Web2 - Reviews" data-widgetId="41a9c10d7cb64ad69d376923095ae64d"></div>
+        </div>
         <div class="reviews-grid">
             
             <div class="review-card">
