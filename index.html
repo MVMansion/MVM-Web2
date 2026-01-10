@@ -88,8 +88,13 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-video-container">
-            <iframe src="https://www.youtube.com/embed/nZFHMtYUQ2Y?si=QKAlp--lr860XLru&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div> 
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                <source src="https://raw.githubusercontent.com/MVMansion/MVM-Web2/main/videos/MV%20Mansion%20House%20720p.mp4" type="video/mp4">
+                <source src="https://cdn.jsdelivr.net/gh/MVMansion/MVM-Web2@main/videos/MV%20Mansion%20House%20720p.mp4" type="video/mp4">
+                <source src="videos/MV Mansion House 720p.mp4" type="video/mp4">
+            </video>
+        </div>
+        </div>  -->
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Mountain View Mansion</h1>
@@ -308,5 +313,11 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        setTimeout(function() {
+            var iframe = document.getElementById('hero-iframe');
+            iframe.src = iframe.src + '&autoplay=1';
+        }, 500);
+    </script>
 </body>
 </html>
