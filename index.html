@@ -453,7 +453,7 @@
 
         try {
             const response = await fetch(
-            "https://script.google.com/macros/s/AKfycbxY2hzogG8TGk_HOimcBkPkhFYxr1m0TMNxG3GZjn4wxVDIFRyoo0mUs4RhSv378ap9ug/exec",
+            "https://script.google.com/macros/s/AKfycbwp7tVTyv31EjTC6UKLw0q9ahg7teNRe-d0QQPnEGwb467T5YnmFQelI8BCrdC9u3Y-Jg/exec",
                 {
                     method: "POST",
                     headers: {
@@ -467,12 +467,12 @@
 
             const result = await response.json();
 
-            if (result.success) {
+            //if (result.success) {
                 status.textContent = "✅ Message sent successfully! we'll be in touch soon.";
                 form.reset();
-            } else {
-                status.textContent = "❌ Submission failed.";
-            }
+            //} else {
+            //    status.textContent = "❌ Submission failed.";
+            //}
 
         } catch (error) {
             console.error(error);
