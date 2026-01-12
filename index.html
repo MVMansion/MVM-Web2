@@ -46,6 +46,99 @@
             width: 100%;
             height: 100%;
         }
+
+        .old-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;                 /* vertical spacing */
+        max-width: 420px;
+        }
+
+        .old-form label {
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        }
+
+        .old-form input,
+        .old-form textarea {
+        margin-top: 0.25rem;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        }
+
+        .old-form button {
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: none;
+            background: #1f2937;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* planning */
+.planning-section {
+    background: var(--primary);
+    color: var(--white);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.planning-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.planning-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.planning-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.planning-form input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+}
+
+.planning-form button {
+    padding: 1rem 2.5rem;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s;
+    max-width: 200px;
+    align-self: center;
+}
+
+.planning-form textarea {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    resize: vertical;
+    min-width: 50%;
+}
+.planning-form button:hover {
+    transform: translateY(-2px);
+}
+
     </style>
 </head>
 <body>
@@ -92,7 +185,6 @@
                 <source src="videos/MVMansionHouse720p.mp4" type="video/mp4">
             </video>
         </div>
-        </div>  -->
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Mountain View Mansion</h1>
@@ -142,8 +234,9 @@
                 </div>
                 <div class="content-right">
                     <div class="video-placeholder">
-                        <img src="https://uc.orez.io/i/44a12a7a435c4ee6819bf755849097b7-Large" alt="Indoor Pool">
-                        <div class="play-button">▶</div>
+                        <video controls playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                            <source src="videos/MVMansionTour720p.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
@@ -190,21 +283,21 @@
             
             <div class="bedroom-carousel">
                 <div class="bedroom-slide">
-                    <img src="https://uc.orez.io/i/768eff96f4f54d6587636095759ea34c-Large" alt="Paris Master Suite">
+                    <img src="https://uc.orez.io/i/768eff96f4f54d6587636095759ea34c-Medium" alt="Paris Master Suite">
                     <div class="bedroom-info">
                         <h3>Paris Master Suite</h3>
                         <p>Upper level master with floor-to-ceiling Paris murals, private deck, and steam room</p>
                     </div>
                 </div>
                 <div class="bedroom-slide">
-                    <img src="https://uc.orez.io/i/575d72bedaa442b6bcbec2c40cd8be96-Medium" alt="Wild Horse Suite">
+                    <img src="https://uc.orez.io/i/2d95b5dc85c84ebc97e0e2afea23dbcb-Medium" alt="Wild Horse Suite">
                     <div class="bedroom-info">
                         <h3>Wild Horse Suite</h3>
                         <p>Horse-themed room with beautiful murals and ensuite bathroom</p>
                     </div>
                 </div>
                 <div class="bedroom-slide">
-                    <img src="https://uc.orez.io/i/5024ffa1b05a4f10971fb46df9d9ecdc-Large" alt="Blue Sky Suite">
+                    <img src="https://uc.orez.io/i/5024ffa1b05a4f10971fb46df9d9ecdc-Medium" alt="Blue Sky Suite">
                     <div class="bedroom-info">
                         <h3>Blue Sky Suite</h3>
                         <p>Spacious suite with master bathroom, two closets, and hidden spaces</p>
@@ -218,15 +311,41 @@
         </div>
     </section>
 
-    <!-- Newsletter Signup -->
-    <section class="newsletter-section">
+    <!-- planning Signup -->
+    <section class="planning-section">
         <div class="container">
-            <div class="newsletter-content">
-                <h2>Last-Minute Discount Alerts</h2>
-                <p>Sign up to be notified when new nights are discounted 25-50% off!</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Sign Up</button>
+            <div class="planning-content">
+                <h2>We can help plan your stay</h2>
+                <p>Tell us the purpose of your stay and we'll send a personalized itinerary and pricing options for your stay.</p>
+                <p>Or Call us at <a href="tel:425-941-6203">425-941-6203</a> for personalized service.</p>
+                <form id="planningForm"class="planning-form">
+                    <label>
+                        Name
+                        <input type="text" name="name" required>
+                    </label>
+
+                    <label>
+                        Email
+                        <input type="email" name="email" required>
+                    </label>
+
+                    <label>
+                        Phone
+                        <input type="tel" name="phone">
+                    </label>
+
+
+                    <label>
+                        Purpose<br>
+                        <textarea name="message" rows="4"></textarea>
+                    </label>
+
+                    <input type="hidden" name="source" value="Planning Help">
+                    <!-- Honeypot field (bots fill this, humans don't) -->
+                    <input type="text" name="company" tabindex="-1" autocomplete="off" style="display:none">
+
+                    <button type="submit">Help Plan</button>
+                    <p id="status"></p>
                 </form>
             </div>
         </div>
@@ -311,11 +430,51 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        setTimeout(function() {
-            var iframe = document.getElementById('hero-iframe');
-            iframe.src = iframe.src + '&autoplay=1';
-        }, 500);
-    </script>
+    
+
+<script>
+const form = document.getElementById('planningForm');
+const status = document.getElementById('status');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+
+  // 🚫 Client-side spam check (honeypot) 
+  if (data.company) {
+    console.warn("Spam submission blocked");
+    return;
+  }
+
+  status.textContent = "Sending…";
+
+  try {
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbxY2hzogG8TGk_HOimcBkPkhFYxr1m0TMNxG3GZjn4wxVDIFRyoo0mUs4RhSv378ap9ug/exec",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      }
+    );
+
+    const result = await response.json();
+
+    if (result.success) {
+      status.textContent = "✅ Message sent successfully! we'll be in touch soon.";
+      form.reset();
+    } else {
+      status.textContent = "❌ Submission failed.";
+    }
+
+  } catch (error) {
+    console.error(error);
+    status.textContent = "❌ Network error. Please try again later.";
+  }
+});
+</script>
+
 </body>
 </html>
