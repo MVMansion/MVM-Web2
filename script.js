@@ -46,37 +46,6 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Form Submission Handler
-const forms = document.querySelectorAll('form');
-forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        
-        // Show success message (customize based on your backend)
-        alert('Thank you! We will contact you shortly.');
-        
-        // Reset form
-        this.reset();
-        
-        // Here you would typically send the data to your server
-        // Example with fetch:
-        // fetch('your-backend-url', {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     console.log('Success:', data);
-        // })
-        // .catch((error) => {
-        //     console.error('Error:', error);
-        // });
-    });
-});
-
 // Image Lazy Loading
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('img[data-src]');
