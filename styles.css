@@ -226,6 +226,7 @@ nav {
     background: transparent;
     color: var(--primary);
     padding: 1rem 3rem;
+    margin-top: 1rem;
     border: 2px solid var(--primary);
     border-radius: 50px;
     text-decoration: none;
@@ -252,7 +253,7 @@ nav {
 
 /* Stats Section */
 .stats-section {
-    padding: 4rem 2rem;
+    padding: 1rem 2rem;
     background: var(--white);
 }
 
@@ -264,7 +265,7 @@ nav {
 }
 
 .stat-card {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 }
 
 .stat-number {
