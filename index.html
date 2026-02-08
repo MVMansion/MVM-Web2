@@ -184,8 +184,13 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-video-container">
-            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="hero-media-container" style="position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;z-index:0;overflow:hidden;">
+            <picture id="heroPicture">
+                <source media="(max-width: 600px)" srcset="https://uc.orez.io/i/0f631814885e4dd4ba942bdab51bd29e-Large">
+                <img id="heroImage" src="https://uc.orez.io/i/0f631814885e4dd4ba942bdab51bd29e-Large" alt="Indoor Pool Complex" style="width:100%;height:100%;object-fit:cover;display:none;">
+            </picture>
+
+            <video id="heroVideo" autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
                 <source src="videos/MVMansionHouse720p.mp4" type="video/mp4">
             </video>
         </div>
@@ -448,6 +453,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="hero-media-toggle.js"></script>
     
 
 <script>
