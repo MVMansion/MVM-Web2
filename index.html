@@ -101,13 +101,15 @@
         .planning-form {
             display: flex;
             flex-direction: column;
-            max-width: 600px;
+            max-width: 650px;
+            width: 80%;
             margin: 0 auto;
             gap: 1rem;
         }
 
         .planning-form input {
             flex: 1;
+            width: 80%;
             padding: 1rem 1.5rem;
             border: none;
             border-radius: 50px;
@@ -128,12 +130,12 @@
         }
 
         .planning-form textarea {
+            width: 85%;
             padding: 1rem 1.5rem;
             border: none;
             border-radius: 12px;
             font-size: 1rem;
             resize: vertical;
-            min-width: 50%;
         }
         .planning-form button:hover {
             transform: translateY(-2px);
@@ -334,9 +336,15 @@
     <section class="planning-section">
         <div class="container">
             <div class="planning-content">
-                <h2>We can help plan your stay</h2>
-                <p>Tell us the purpose of your stay and we'll send a personalized itinerary and pricing options for your stay.</p>
-                <p>Or Call us at <a href="tel:425-941-6203">425-941-6203</a> for personalized service.</p>
+                <h2>Plan an unforgettable stay</h2>
+                <p>We can help you plan your perfect stay</p>
+                <ul class="no-bullets">
+                    <li>Recommendations for local activities</li>
+                    <li>Floor plans and bedroom maps</li>
+                    <li>Transportation solutions</li>
+                    <li>Arrange for catering</li>
+                </ul><br>
+                <p>Call us at <a href="tel:425-941-6203">425-941-6203</a> for personalized service.</p>
                 <form id="planningForm"class="planning-form">
                     <label>
                         Name
@@ -355,15 +363,15 @@
 
 
                     <label>
-                        Purpose<br>
-                        <textarea name="message" rows="4"></textarea>
+                        Purpose of Stay<br>
+                        <textarea name="message" rows="5"></textarea>
                     </label>
 
                     <input type="hidden" name="source" value="Planning Help">
                     <!-- Honeypot field (bots fill this, humans don't) -->
                     <input type="text" name="company" tabindex="-1" autocomplete="off" style="display:none">
 
-                    <button type="submit">Help Plan</button>
+                    <button type="submit">Plan My Stay</button>
                     <p id="status"></p>
                 </form>
             </div>

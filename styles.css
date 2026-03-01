@@ -489,6 +489,33 @@ section {
     text-align: center;
 }
 
+/* Planning list: bullets inside (next to text).
+   If you'd rather remove bullets completely, add the `no-bullets` class to the <ul>. */
+.planning-content ul {
+    list-style-position: inside;
+    padding-left: 1.2rem;
+    margin-top: 1rem;
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* Telephone links: use a high-contrast yellow/gold for visibility
+   This targets any <a> with an href starting with "tel:" */
+a[href^="tel:"] {
+    color: #ffd700;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a[href^="tel:"]:hover {
+    color: #ffec8b;
+    text-decoration: underline;
+}
+
 /* Shared Section Headers */
 .cta-heading {
     text-align: center;
