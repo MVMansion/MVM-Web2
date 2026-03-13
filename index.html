@@ -130,14 +130,35 @@
         }
 
         .planning-form textarea {
-            width: 85%;
+            flex: 1;
+            width: 80%;
             padding: 1rem 1.5rem;
             border: none;
-            border-radius: 12px;
+            border-radius: 50px;
             font-size: 1rem;
             resize: vertical;
         }
         .planning-form button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* call button matching form submit style */
+        .planning-form-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+            max-width: 200px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .planning-form-button:hover {
             transform: translateY(-2px);
         }
 
@@ -423,7 +444,10 @@
                     <li>Catering Services</li>
                 </ul><br>
                 <p>Call us at <a href="tel:425-941-6203">425-941-6203</a> for personalized service.</p>
-                <form id="planningForm"class="planning-form">
+                <div class="call-button-container" style="text-align:center;margin-bottom:1.5rem;">
+                    <a href="tel:425-941-6203" class="planning-form-button">Call Now</a>
+                </div>
+                <form id="planningForm" class="planning-form">
                     <label>
                         Name
                         <input type="text" name="name" required>
@@ -441,7 +465,7 @@
 
 
                     <label>
-                        Purpose of Stay<br>
+                        Purpose of Stay<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <textarea name="message" rows="5"></textarea>
                     </label>
 
