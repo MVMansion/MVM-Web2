@@ -21,7 +21,7 @@
             "          <li class=\"dropdown\"><a href=\"#\">Events ▾</a>",
             "              <ul class=\"dropdown-menu\">",
             "                  <li><a href=\"reunions.html\">Family Reunions</a></li>",
-            "                  <li><a href=\"retreats.html\">Corporate Retreats</a></li>",
+            "                  <li><a href=\"retreats.html\">Retreats</a></li>",
             "                  <li><a href=\"weddings.html\">Weddings</a></li>",
             "              </ul>",
             "          </li>",
@@ -66,7 +66,7 @@
             "        <li><a href=\"reunions-retreats.html\">Get Together</a></li>",
             "        <li><a href=\"things_to_do.html\">Mansion Activities</a></li>",
             "        <li><a href=\"reunions.html\">Family Reunions</a></li>",
-            "        <li><a href=\"retreats.html\">Corporate Retreats</a></li>",
+            "        <li><a href=\"retreats.html\">Retreats</a></li>",
             "        <li><a href=\"weddings.html\">Weddings</a></li>",
             "   </ul>",
        		"</div>"
